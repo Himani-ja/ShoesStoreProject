@@ -12,7 +12,7 @@ namespace ShoesData
     public class FileRepo
     {
         static List<shoes> cats = null;
-        static string path = @"C:\shoesproject\ShoesStoreProject\ShoesStore\ShoesStore\shoes.xml";
+        static string path = @"C:\shoesproject\ShoesStoreProject\ShoesStore\ShoesData\shoes.xml";
         public List<shoes> Init(int id,Category category)
         {
             Console.WriteLine("hello");
