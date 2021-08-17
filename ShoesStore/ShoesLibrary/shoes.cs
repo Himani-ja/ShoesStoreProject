@@ -7,6 +7,7 @@ namespace ShoesLibrary
         Casual_Wear=1,Sports,Loafer,Boots,Sneakers,
         
     }
+
     public class shoes
     {
         int id;
@@ -32,10 +33,20 @@ namespace ShoesLibrary
                 category = value;
             }
         }
-
+        double size;
+        public double Size 
+        { 
+            get { 
+                return size;
+            }
+            set 
+            {
+                size = value; 
+            }
+        }
         public  string AddShoes()
         {
-            return  $"\nId: {Id} \nCategory: {Category}";
+            return  $"\nId: {Id} \nCategory: {Category}\nSize:{size}";
         }
     }
 }

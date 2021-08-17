@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ShoesData
 {
-    /*public enum Category
+    public enum Category
     {
         Casual_Wear = 1, Sports, Loafer, Boots, Sneakers
 
-    }*/
+    }
    public class shoes
     {
         public int Id { get; set; }
-        public int Category { get; set; }
+        public Category Category { get; set; }
     }
 }
