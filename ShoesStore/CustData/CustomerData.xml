@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Customer>
-    <C_Id>101</C_Id>
-    <C_name>Nikita</C_name>
-    <C_Email>Nikita@gmail.com</C_Email>
-    <C_contact>1212121212</C_contact>
-    <C_location>mumbai</C_location>
+    <C_Id>1</C_Id>
+    <C_name>1</C_name>
+    <C_Email>w</C_Email>
+    <C_contact>34455</C_contact>
+    <C_location>mum</C_location>
   </Customer>
 </ArrayOfCustomer>
