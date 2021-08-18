@@ -2,6 +2,13 @@
 <ArrayOfShoes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <shoes>
     <Id>1</Id>
-    <Category>Boots</Category>
+    <Category>Sports</Category>
+    <Size>8.6</Size>
+    <Price>2003</Price>
+    <Color>Blue</Color>
+    <Type>Female</Type>
+    <Lace>No</Lace>
+    <Brand>puma</Brand>
+    <Quantity>100</Quantity>
   </shoes>
 </ArrayOfShoes>
