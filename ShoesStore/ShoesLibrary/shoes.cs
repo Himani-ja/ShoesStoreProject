@@ -1,4 +1,5 @@
 ﻿using System;
+using ShoesLibrary;
 
 namespace ShoesLibrary
 {
@@ -20,7 +21,7 @@ namespace ShoesLibrary
         Yes = 0, No
     }
 
-    public class shoes
+   public class shoes
     {
         int id;
         public int Id {
@@ -56,6 +57,7 @@ namespace ShoesLibrary
                 size = value; 
             }
         }
+
         double price;
         public double Price
         {
@@ -132,6 +134,8 @@ namespace ShoesLibrary
         public  string AddShoes()
         {
             return  $"\nId: {Id} \nCategory: {Category}\nSize:{size}\nPrice:{price}";
+
+       
         }
     }
 }

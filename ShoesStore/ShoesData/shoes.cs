@@ -33,7 +33,9 @@ namespace ShoesData
         public Types Type { get; set; }
         public Lace Lace { get; set; }
         public string Brand { get; set; }
-        public int Quantity { get; set; }
+        public int Quantity { get; set;}
+
+       
 
     }
 }

@@ -7,14 +7,20 @@ using System.Threading.Tasks;
 
 namespace ShoesLibrary
 {
-    public class Mapper
+
+    class Mapper
     {
-        public static ShoesData.shoes Map(ShoesLibrary.shoes shoes1)
+       /* public static ShoesData.shoes Map(ShoesLibrary.shoes shoes1)
+
         {
             return new ShoesData.shoes()
             {
                 Id = shoes1.Id,
+
                 Category = Map(shoes1.Category)
+
+                Category = (int)Map(shoes1.Category)
+
             };
 
         }
@@ -35,7 +41,11 @@ namespace ShoesLibrary
                 Category = Map((ShoesData.Category)shoes1.Category)
             };
 
+
         }
+=======
+        }*/
+
         
     }
 }
