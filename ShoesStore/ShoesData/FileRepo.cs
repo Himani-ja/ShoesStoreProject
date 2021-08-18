@@ -12,12 +12,12 @@ namespace ShoesData
     public class FileRepo
     {
         static List<shoes> cats = null;
-        static string path = @"D:\Training1\pro\dotnet\ShoesStore\ShoesData\shoes.xml";
-        public List<shoes> Init(int id,Category category)
+        static string path = @"C:\shoesproject\ShoesStoreProject\ShoesStore\ShoesData\shoes.xml";
+        public List<shoes> Init(int id,Category category,double size,double price,Colors color,Types type,Lace lace,string brand,int quantity)
         {
-            Console.WriteLine("hello");
             cats = new List<shoes>(){
-                    new shoes(){Id=id,Category=category},
+                    new shoes(){Id=id,Category=category,Size=size,Price=price,Color=color,Type=type,Lace=lace,Brand=brand,Quantity=quantity},
+
                     
                 };
             return cats;
@@ -25,12 +25,8 @@ namespace ShoesData
         public void Addshoes(List<shoes> cats)
         {
             StreamWriter writer = new StreamWriter(path);
-            FileStream fs = File.Open("ShoesData.xml", FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
             XmlSerializer serializer = new XmlSerializer(typeof(List<shoes>));
-            serializer.Serialize(fs, cats);
-
-            
-
+            serializer.Serialize(writer, cats);
             writer.Close();
             System.Console.WriteLine("All cats has bee stored in the XML file at {0}", path);
         }
