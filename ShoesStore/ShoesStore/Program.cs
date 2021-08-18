@@ -11,8 +11,8 @@ namespace ShoesStore
         static void Main(string[] args)
         {
 
-            AddShoes();
-            
+            //AddShoes();
+            Display();
         }
         private static void AddShoes()
         {
@@ -112,69 +112,32 @@ namespace ShoesStore
                     menu();
                 }
             }
+            
 
+        }
 
-
-
-
-
-
-
-
-
-
-            /*
-            private static void AddShoes()
+        private static void Display()
+        {
+            FileRepo display = new FileRepo();
+            var allshoes = display.GetAllShoes();
+            Console.WriteLine("Shoes at our satore are");
+            Console.WriteLine("--------+++++-------+++++--------");
+            foreach (var shoes in allshoes)
             {
-                ShoesLibrary.shoes shoes1 = new ShoesLibrary.shoes();
-                Console.Write("shoes Id: ");
-                shoes1.Id = int.Parse(Console.ReadLine());
-                Console.Write(" shoes Category: ");
-                shoes1.Category = (ShoesLibrary.Category)int.Parse(Console.ReadLine());
-                Console.Write(shoes1.AddShoes());
-                FileRepo repo = new FileRepo();
-                var cate = shoes1.Category;
-                //Console.WriteLine(cate);
-                var addshoes = repo.Init(shoes1.Id, (ShoesData.Category)cate);
-                repo.Addshoes(addshoes);
+
+                Console.Write("| id:" + shoes.Id);
+                Console.Write(" category:" + shoes.Category + "|");
+                Console.Write(" Brand:" + shoes.Brand +"|");
+                Console.Write(" Type:" + shoes.Type + "|");
+                Console.Write(" Lace:" + shoes.Lace + "|");
+                Console.Write(" Size:" + shoes.Size + "|");
+                Console.Write(" Color:" + shoes.Color + "|");
+                Console.Write(" Price:" + shoes.Price+ "|");
+                Console.Write(" Quantity:"+ shoes.Quantity+ "| \n");
+
+
 
             }
-            private static void AddCustomer()
-            {
-                ShoesLibrary.Customer customer = new ShoesLibrary.Customer();
-                Console.Write("Customer Id: ");
-                customer.C_Id = int.Parse(Console.ReadLine());
-
-                Console.Write("Customer name: ");
-                customer.C_name = Console.ReadLine();
-
-                Console.Write("Customer Email: ");
-                customer.C_Email = Console.ReadLine();
-
-                Console.Write("Customer contact number: ");
-                customer.C_contact = Int32.Parse(Console.ReadLine());
-
-                Console.Write("Customer Location: ");
-                customer.C_location = Console.ReadLine();
-                CustRepo c_repo = new CustRepo();
-
-                var addcustomer = c_repo.Init(customer.C_Id,customer.C_name, customer.C_Email, customer.C_contact,customer.C_location);
-                c_repo.AddCustomer(addcustomer);
-            }*/
-
-            /* private static void AddStore()
-             {
-                 StoreData.Store store1 = new StoreData.Store();
-                 Console.Write("Store Id: ");
-                 store1.Id = int.Parse(Console.ReadLine());
-                 Console.Write("Store Location: ");
-                 store1.Location = Console.ReadLine();
-                 StoreData.FileRepoStore Repo2 = new StoreData.FileRepoStore();
-                 var addStore = Repo2.Init (store1.Id,store1.Location);
-                 Repo2.Addstore(addStore);
-             }
-             */
-
         }
     }
 }
