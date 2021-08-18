@@ -15,5 +15,7 @@ namespace ShoesData
     {
         public int Id { get; set; }
         public Category Category { get; set; }
+
+       
     }
 }
