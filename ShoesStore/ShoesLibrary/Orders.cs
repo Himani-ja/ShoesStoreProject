@@ -20,6 +20,18 @@ namespace ShoesLibrary
                orderid = value;
             }
         }
+        int customer_id;
+        public int Customer_Id
+        {
+            get
+            {
+                return customer_id;
+            }
+            set
+            {
+                customer_id = value;
+            }
+        }
         int storeid;
         public int StoreId
         {
@@ -43,6 +55,18 @@ namespace ShoesLibrary
             set
             {
                 totalbill = value;
+            }
+        }
+        string orderdate;
+        public string OrderDate
+        {
+            get
+            {
+                return orderdate;
+            }
+            set
+            {
+                orderdate = value;
             }
         }
     }

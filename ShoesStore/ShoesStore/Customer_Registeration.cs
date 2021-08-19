@@ -19,25 +19,25 @@ namespace ShoesStore
             int randomnum = uniqueid.Next(10001, 100000);
             customer.C_Id = randomnum;
 
-            Console.Write("Customer name: ");
+            Console.Write("\n Customer Name: ");
             customer.C_name = Console.ReadLine();
 
-            Console.Write("Customer Email: ");
+            Console.Write("\n Customer Email: ");
             customer.C_Email = Console.ReadLine();
 
-            Console.Write("Customer contact number: ");
-            customer.C_contact = Int32.Parse(Console.ReadLine());
+            Console.Write("\n Customer Contact number: ");
+            customer.C_contact = Console.ReadLine();
 
-            Console.Write("Customer Location: ");
+            Console.Write("\n Customer Location: ");
             customer.C_location = Console.ReadLine();
             
             Console.WriteLine("\n-----------------------------------------\n");
-            Console.WriteLine("Create User Name");
+            Console.Write("\n Create User Name: ");
             cus_credential.C_UserName = Console.ReadLine();
         pass:
-            Console.WriteLine("Create Password");
+            Console.Write("\n Create Password: ");
             string pass1 = Console.ReadLine();
-            Console.WriteLine("Confirm Password");
+            Console.Write("\n Confirm Password: ");
             string pass2 = Console.ReadLine();
             if(pass1==pass2)
             {
@@ -45,7 +45,7 @@ namespace ShoesStore
             }
             else
             {
-                Console.WriteLine("Your password doesn't match ");
+                Console.WriteLine("\n------- Your password doesn't match--------\n");
                 goto pass;
             }
         

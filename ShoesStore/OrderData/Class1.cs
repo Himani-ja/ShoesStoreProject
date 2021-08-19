@@ -3,34 +3,36 @@ using StoreData;
 using ShoesData;
 using ShoesLibrary;
 using System.Data;
+
 namespace OrderData
 {
     public class Order
     {
         public object ViewState { get; private set; }
 
-        public void StoreSelection()
+        public void StoreSelection(int u_id)
         {
             int shoeselection;
             
             double cost=0;
             int selection;
-            StoreData.FileRepoStore Store = new StoreData.FileRepoStore();
-            ShoesLibrary.Orders Orderobj = new ShoesLibrary.Orders();
+            FileRepoStore Store = new FileRepoStore();
+            Orders Orderobj = new Orders();
             var allstores = Store.GetAllStores();
+            Console.WriteLine("\n-----------------Order Page-----------------\n");
             foreach (var store in allstores)
             {
-
-                Console.Write("| Id:" + store.Id);
-                Console.Write(" Location:" + store.Location + "|\n");
+                
+                Console.Write("|     Id:" + store.Id);
+                Console.Write(" Location:" + store.Location + "    |\n");
             }
-            Console.WriteLine("Select Store You want to buy from");
+            Console.Write("\n Select Store Id, You want to buy from ");
             selection = int.Parse(Console.ReadLine());
             foreach (var store in allstores)
             {
                 if (selection == store.Id)
                 {
-                    Console.WriteLine("You selected " + store.Location + " store");
+                    Console.WriteLine(" You selected " + store.Location + " store ");
                 }
             }
             
@@ -43,20 +45,20 @@ namespace OrderData
                     {
 
 
-                        Console.Write("Store id:" + shoes.StoreId + "|");
-                        Console.Write("id:" + shoes.Id + "|");
-                        Console.Write(" category:" + shoes.Category + "|");
-                        Console.Write(" Brand:" + shoes.Brand + "|");
-                        Console.Write(" Type:" + shoes.Type + "|");
-                        Console.Write(" Lace:" + shoes.Lace + "|");
-                        Console.Write(" Size:" + shoes.Size + "|");
-                        Console.Write(" Color:" + shoes.Color + "|");
-                        Console.Write(" Price:" + shoes.Price + "|\n");
+                        Console.Write("\n| Store id:" + shoes.StoreId + " |");
+                        Console.Write(" Id:" + shoes.Id + " |");
+                        Console.Write(" Category:" + shoes.Category + " |");
+                        Console.Write(" Brand:" + shoes.Brand + " |");
+                        Console.Write(" Type:" + shoes.Type + " |");
+                        Console.Write(" Lace:" + shoes.Lace + " |");
+                        Console.Write(" Size:" + shoes.Size + " |");
+                        Console.Write(" Color:" + shoes.Color + " |");
+                        Console.Write(" Price:" + shoes.Price + " |\n");
                     }
-                    Orderobj.StoreId = shoes.StoreId;
+                    Orderobj.StoreId = selection;
 
                 }
-                Console.WriteLine("Select Shoe id to buy");
+                Console.Write("\n Select Shoe Id to buy ");
                 shoeselection = int.Parse(Console.ReadLine());
                 
                 foreach (var shoes in allshoes)
@@ -66,41 +68,64 @@ namespace OrderData
                     {
                     
                         var decreaseqty = display.GetShoes(shoes.Id);
-                       
-
-                    
-                        Console.WriteLine(decreaseqty.Quantity);
+                        //Console.WriteLine(decreaseqty.Quantity);
                         cost = cost + shoes.Price;
-                       
-                        
-                        
+
                     }
 
                 }
-                Console.WriteLine("<1>Add more item \n <2> Checkout");
+            menu:
+                Console.Write("\n <1> Add more item \n <2> Checkout\n");
+                Console.Write("\n Choose the above option: ");
                 int choice = int.Parse(Console.ReadLine());
                 switch (choice)
                 {
                 case 1:
                     goto buymore;
-                    break;
+                   
                 case 2:
                     break;
                 default:
-                    goto buymore;
-                    break;
+                    Console.WriteLine(" You selected wrong option ");
+                    goto menu;
+                  
                 }
-            Console.WriteLine("Thanks for shopping with us\n Your Total bill is:" + cost);
+            Console.Write("\n-----Thanks for shopping with us-----\n Your Total bill is:" + cost+"\n");
+
+            
             OrderRepo order = new OrderRepo();
+
+            DateTime orderdate = DateTime.Now;
+            string order_date = Convert.ToString(orderdate);
+            
             Random randomnumber = new Random();
             int num = randomnumber.Next(10000, 100000);
             Orderobj.OrderId = num;
             Orderobj.TotalBill = cost;
-            
-
-
-            var addorder = order.InitOrder(Orderobj.OrderId, Orderobj.StoreId, Orderobj.TotalBill);
+            Orderobj.Customer_Id = u_id;
+            var addorder = order.InitOrder(Orderobj.OrderId,Orderobj.Customer_Id, Orderobj.StoreId, Orderobj.TotalBill,order_date);
             order.AddOrders(addorder);
+
+            Console.ReadLine();
+        }
+        public void OrderHistory(int u_id)
+        {
+            OrderRepo orderobj = new OrderRepo();
+            
+            var allorders = orderobj.GetAllOrders();
+            foreach (var order in allorders)
+            {
+                if (u_id == order.Customer_Id)
+                {
+
+                    Console.Write("\n|  Date and Time of Order : " + order.OrderDate + " |");
+                    Console.Write(" Store id: " + order.StoreId + " |");
+                    Console.Write(" Order id: " + order.OrderId + " |");
+                    Console.Write(" Total bill: " + order.TotalBill + " |\n");
+                    
+                }
+            }
+            Console.ReadLine();
 
         }
     }

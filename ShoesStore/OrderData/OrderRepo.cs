@@ -17,10 +17,10 @@ namespace OrderData
         {
             static List<orders> orderlist = null;
             public string path = @"..\..\..\..\OrderData\Orders.xml";
-            public List<orders> InitOrder(int oid, int sid,double tbill)
+            public List<orders> InitOrder(int oid,int u_id, int sid,double tbill,string orderdate)
             {
             orderlist = new List<orders>(){
-                    new orders(){StoreId=sid,OrderId=oid,TotalBill=tbill},
+                    new orders(){StoreId=sid,Customer_Id=u_id,OrderId=oid,TotalBill=tbill,OrderDate=orderdate},
 
 
                 };
@@ -66,6 +66,38 @@ namespace OrderData
 
             System.Console.WriteLine("All orders stored in the XML file at {0}", path);
             }
+        public IEnumerable<orders> GetAllOrders(string _path = @"..\..\..\..\OrderData\Orders.xml")
+        {
+            XmlSerializer deserializer = null;
+            List<orders> allorders = null;
+            try
+            {
+                using StreamReader reader = new StreamReader(_path);
+                deserializer = new XmlSerializer(typeof(List<orders>));
+                allorders = (List<orders>)deserializer.Deserialize(reader);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (FileNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception");
+            }
+            if (allorders != null)
+            {
+                if (allorders.Count > 0)
+                    return allorders;
+            }
+            else
+                throw new System.NullReferenceException();
+            return null;
         }
+        
+    }
     }
 

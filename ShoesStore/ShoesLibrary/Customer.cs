@@ -45,8 +45,8 @@ namespace ShoesLibrary
                 c_Email = value;
             }
         }
-        Int32 c_contact;
-        public Int32 C_contact
+        string c_contact;
+        public string C_contact
         {
             get
             {

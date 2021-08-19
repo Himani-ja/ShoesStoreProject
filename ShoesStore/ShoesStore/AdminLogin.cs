@@ -7,6 +7,7 @@ using ShoesLibrary;
 using ShoesData;
 using CustData;
 using StoreData;
+using OrderData;
 
 namespace ShoesStore
 {
@@ -14,6 +15,7 @@ namespace ShoesStore
     {
         public void Login(string username, string password)
         {
+            Console.WriteLine("\n-------------Admin Module-----------------\n");
             if (username == "admin" && password == "admin")
             {
                 
@@ -21,50 +23,42 @@ namespace ShoesStore
               
                 while (action !=0)
                 {
-                 
-                  //  Console.WriteLine("You choose : " + action);
-
                     switch (action)
                     {
                         case 1:
                             AddShoes();
-                           // ContinueOrExit1();
                             break;
                         case 2:
                             AddStore();
-                          //  ContinueOrExit1();
                             break;
                         case 3:
                             SearchCustomer();
-                           // ContinueOrExit1();
-                          //  Console.Clear();
-                           // Console.ReadLine();
+                            break;
+                        case 4:
+                            StoreOrderHistory();
                             break;
                     }
-                  
                     action = menu1();
                    
                 }
-               
-
             }
             else
-            {Console.WriteLine("Wrong Credentials..."); }
+            {Console.WriteLine("\n--------Wrong Credentials--------\n"); }
 
 
         }
         public int menu1()
         {
             Console.Clear();
-            Console.WriteLine("<1> Add Shoes Details \n<2> Add Store Information \n<3> Search Customer by name <0> Exit");
-            Console.Write("Selection : ");
+            Console.WriteLine("\n <1> Add Shoes Details \n <2> Add Store Information \n <3> Search Customer by name \n <4> All Order History of Store.\n <0> Exit");
+            Console.Write("\n Choose the above option: ");
             int ip = Int32.Parse(Console.ReadLine());
             return ip;
             // performSelectionAction(ip);
         }
-        public void ContinueOrExit1()
+       /* public void ContinueOrExit1()
         {
-            Console.Write("Continue ? y/n : ");
+            Console.Write(" Continue ? y/n : ");
             var res = Console.ReadLine();
             if (res == "y" || res == "Y")
             {
@@ -78,16 +72,16 @@ namespace ShoesStore
 
             }
  
-        }
+        }*/
         private static void AddShoes()
         {
             FileRepoStore display = new FileRepoStore();
             var allstores = display.GetAllStores();
-            Console.WriteLine("Choose Store :");
+            Console.WriteLine(" Choose Store: ");
             foreach (var store in allstores)
             {
 
-                Console.Write("| Id:" + store.Id);
+                Console.Write("\n | Id:" + store.Id+" |");
                 Console.Write(" Location:" + store.Location + "|\n");
 
             }
@@ -96,43 +90,35 @@ namespace ShoesStore
             int id;
             id=int.Parse(Console.ReadLine());
             var storeid=display.GetStore(id);
-            //Console.WriteLine(storeid.Id);
 
-            
             ShoesLibrary.shoes shoes1 = new ShoesLibrary.shoes();
-            // Console.Write("Please enter shoes Id: ");
-            // shoes1.Id = int.Parse(Console.ReadLine());
+          
             Random uniqueid = new Random();
             int randomnum = uniqueid.Next(10001, 100000);
             shoes1.Id = randomnum;
-            Console.Write("Please enter shoes Category -\npress <1> for Casual_Wear \npress <2> for Sports \npress <3> for Loafer \npress <4> for Boots \npress <5> for Sneakers:");
+            Console.Write(" Please enter shoes Category -\n <1> for Casual_Wear \n <2> for Sports \n <3> for Loafer \n <4> for Boots \n <5> for Sneakers:");
+            Console.Write("\n Choose the above Shoes Category: ");
             shoes1.Category = (ShoesLibrary.Category)int.Parse(Console.ReadLine());
-            //var cate = shoes1.Category;
-            //Console.Write(shoes1.AddShoes());
-            Console.Write("Please enter shoes brand:");
+
+            Console.Write("\n Please enter shoes brand: ");
             shoes1.Brand = Console.ReadLine();
-            Console.Write("Please enter shoes Type - press <0> for male and press <1> for female: ");
+            Console.Write("\n Please enter shoes Type - <0> for male and  <1> for female: ");
             shoes1.Type = (ShoesLibrary.Types)int.Parse(Console.ReadLine());
-            Console.Write("Please enter shoes has Lace - press <0> for yes and press <1> for no: ");
+            Console.Write("\n Please enter shoes has Lace - <0> for yes and <1> for no: ");
             shoes1.Lace = (ShoesLibrary.Lace)int.Parse(Console.ReadLine());
-            Console.Write("Please enter shoes Color-(Black,White,Blue,Red,Brown,Grey): ");
+            Console.Write("\n Please enter shoes Color-(Black,White,Blue,Red,Brown,Grey): ");
             string color = Console.ReadLine();
-            //Console.WriteLine(color);
+
             shoes1.Color = (ShoesLibrary.Colors)Enum.Parse(typeof(ShoesLibrary.Colors), color);
-            Console.Write("Please enter shoes size: ");
+            Console.Write("\n Please enter shoes size: ");
             shoes1.Size = double.Parse(Console.ReadLine());
-            Console.Write("Please enter shoes price: ");
+            Console.Write("\n Please enter shoes price: ");
             shoes1.Price = double.Parse(Console.ReadLine());
-            Console.Write("Please enter shoes quantity: ");
+            Console.Write("\n Please enter shoes quantity: ");
             shoes1.Quantity = int.Parse(Console.ReadLine());
-
-
 
             FileRepo repo = new FileRepo();
 
-
-
-            //Console.WriteLine(cate);
             var addshoes = repo.Init(storeid.Id,shoes1.Id, (ShoesData.Category)shoes1.Category, shoes1.Size, shoes1.Price, (ShoesData.Colors)shoes1.Color, (ShoesData.Types)shoes1.Type, (ShoesData.Lace)shoes1.Lace, shoes1.Brand, shoes1.Quantity);
             repo.Addshoes(addshoes);
 
@@ -145,7 +131,7 @@ namespace ShoesStore
             int randomnum = uniqueid.Next(10001, 100000);
             store1.Id = randomnum;
 
-            Console.Write("Store Location: ");
+            Console.Write("\n Store Location: ");
             store1.Location = Console.ReadLine();
             StoreData.FileRepoStore Repo2 = new StoreData.FileRepoStore();
             var addStore = Repo2.Init(store1.Id, store1.Location);
@@ -166,6 +152,34 @@ namespace ShoesStore
             Console.WriteLine("Name :"+storename.C_name);
             Console.WriteLine("Email :"+storename.C_Email);
             Console.WriteLine("Location : "+storename.C_location);
+            Console.ReadLine();
+
+        }
+        private static void StoreOrderHistory()
+        {
+            int selection;
+            FileRepoStore Store = new FileRepoStore();
+            var allstores = Store.GetAllStores();
+            foreach (var store in allstores)
+            {
+                Console.Write("| Id:" + store.Id);
+                Console.Write(" Location:" + store.Location + "|\n");
+            }
+            Console.WriteLine("Enter Id of the Store You want order History");
+            selection = int.Parse(Console.ReadLine());
+           
+            OrderRepo orderhistory = new OrderRepo();
+            var allorders = orderhistory.GetAllOrders();
+             foreach (var order in allorders)
+             {
+                 if (selection == order.StoreId)
+                 {
+                    Console.Write("\n|  Date and Time of Order : " + order.OrderDate + "|");
+                    Console.Write("Store id: " + order.StoreId + "|");
+                    Console.Write(" Order id : " + order.OrderId + "|");
+                    Console.Write(" Total bill : " + order.TotalBill + "|\n");
+                }
+             }
             Console.ReadLine();
 
         }

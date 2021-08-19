@@ -1,86 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfCustomer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Customer>
-    <C_Id>1</C_Id>
-    <C_name>1</C_name>
-    <C_Email>w</C_Email>
-    <C_contact>34455</C_contact>
-    <C_location>mum</C_location>
-  </Customer>
-  <Customer>
-    <C_Id>23</C_Id>
+    <C_Id>49007</C_Id>
     <C_name>Emran</C_name>
     <C_Email>emran@gmail.com</C_Email>
-    <C_contact>12321232</C_contact>
+    <C_contact>9879865498</C_contact>
     <C_location>Chembur</C_location>
   </Customer>
   <Customer>
-    <C_Id>56</C_Id>
+    <C_Id>90869</C_Id>
     <C_name>Vivek</C_name>
-    <C_Email>Mauryav87@gmail.com</C_Email>
-    <C_contact>7754</C_contact>
-    <C_location>Uttar Pradesh</C_location>
-
-    <C_Id>4</C_Id>
-    <C_name>himani</C_name>
-    <C_Email>himani@gmil.com</C_Email>
-    <C_contact>123455</C_contact>
-    <C_location>mumbai</C_location>
+    <C_Email>vivek@gmail.com</C_Email>
+    <C_contact>986543232</C_contact>
+    <C_location>sion</C_location>
   </Customer>
   <Customer>
-    <C_Id>5</C_Id>
-    <C_name>himani</C_name>
-    <C_Email>himani.@</C_Email>
-    <C_contact>876422</C_contact>
-    <C_location>mumbai</C_location>
-  </Customer>
-  <Customer>
-    <C_Id>3</C_Id>
-    <C_name>hima</C_name>
-    <C_Email>hikm</C_Email>
-    <C_contact>34678</C_contact>
-    <C_location>mumn</C_location>
-  </Customer>
-  <Customer>
-    <C_Id>5</C_Id>
-    <C_name>uma</C_name>
-    <C_Email>gik</C_Email>
-    <C_contact>2345</C_contact>
-    <C_location>mumbai</C_location>
-  </Customer>
-  <Customer>
-    <C_Id>66</C_Id>
-    <C_name>him</C_name>
-    <C_Email>jdi</C_Email>
-    <C_contact>3234</C_contact>
-    <C_location>kmdk</C_location>
-  </Customer>
-  <Customer>
-    <C_Id>1</C_Id>
-    <C_name>kil</C_name>
-    <C_Email>kdm</C_Email>
-    <C_contact>123455</C_contact>
-    <C_location>hlm</C_location>
-  </Customer>
-  <Customer>
-    <C_Id>1</C_Id>
-    <C_name>him</C_name>
-    <C_Email>hj</C_Email>
-    <C_contact>565678</C_contact>
-    <C_location>nmn</C_location>
-  </Customer>
-  <Customer>
-    <C_Id>1</C_Id>
-    <C_name>jh</C_name>
-    <C_Email>bghjj</C_Email>
-    <C_contact>5657</C_contact>
-    <C_location>hjghj</C_location>
-  </Customer>
-  <Customer>
-    <C_Id>1</C_Id>
-    <C_name>him</C_name>
-    <C_Email>hjjk</C_Email>
-    <C_contact>3454</C_contact>
-    <C_location>ghhj</C_location>
+    <C_Id>98062</C_Id>
+    <C_name>Himani</C_name>
+    <C_Email>himani@gmail.com</C_Email>
+    <C_contact>987654345</C_contact>
+    <C_location>Mumbai</C_location>
   </Customer>
 </ArrayOfCustomer>

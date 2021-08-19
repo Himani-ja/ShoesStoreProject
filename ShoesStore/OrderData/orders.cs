@@ -9,7 +9,9 @@ namespace OrderData
     public class orders
     {
         public int StoreId { get; set; }
+        public int Customer_Id { get; set; }
         public int OrderId { get; set; }
         public double TotalBill { get; set; }
+        public string OrderDate { get; set; }
     }
 }

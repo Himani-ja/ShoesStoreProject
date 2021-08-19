@@ -13,7 +13,7 @@ namespace CustData
     {
         static List<Customer> Custs = null;
         static string path = @"..\..\..\..\CustData\CustomerData.xml";
-        public List<Customer> Init(int Id,  string name,string email,Int32 contact,string locat)
+        public List<Customer> Init(int Id,  string name,string email,string contact,string locat)
         {
             //Console.WriteLine("hello");
             Custs = new List<Customer>(){

@@ -1,11 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfStore xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Store>
-    <Id>43</Id>
+    <Id>39868</Id>
+    <Location>Parel</Location>
+  </Store>
+  <Store>
+    <Id>53970</Id>
     <Location>Chembur</Location>
   </Store>
   <Store>
-    <Id>12</Id>
-    <Location>Parel</Location>
+    <Id>26727</Id>
+    <Location>Dadar</Location>
   </Store>
 </ArrayOfStore>
