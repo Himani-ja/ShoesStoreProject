@@ -77,7 +77,7 @@ namespace ShoesStore
         {
             FileRepoStore display = new FileRepoStore();
             var allstores = display.GetAllStores();
-            Console.WriteLine(" Choose Store: ");
+            
             foreach (var store in allstores)
             {
 
@@ -85,8 +85,8 @@ namespace ShoesStore
                 Console.Write(" Location:" + store.Location + "|\n");
 
             }
-           
-            
+
+            Console.Write(" Choose Store : ");
             int id;
             id=int.Parse(Console.ReadLine());
             var storeid=display.GetStore(id);
@@ -122,6 +122,9 @@ namespace ShoesStore
             var addshoes = repo.Init(storeid.Id,shoes1.Id, (ShoesData.Category)shoes1.Category, shoes1.Size, shoes1.Price, (ShoesData.Colors)shoes1.Color, (ShoesData.Types)shoes1.Type, (ShoesData.Lace)shoes1.Lace, shoes1.Brand, shoes1.Quantity);
             repo.Addshoes(addshoes);
 
+            Console.WriteLine("\n Shoes has been added to the store ");
+            Console.ReadLine();
+
         }
         private static void AddStore()
         {
@@ -136,6 +139,9 @@ namespace ShoesStore
             StoreData.FileRepoStore Repo2 = new StoreData.FileRepoStore();
             var addStore = Repo2.Init(store1.Id, store1.Location);
             Repo2.Addstore(addStore);
+
+            Console.WriteLine("\n Store has been added! ");
+            Console.ReadLine();
         }
 
         private static void SearchCustomer()
@@ -165,19 +171,20 @@ namespace ShoesStore
                 Console.Write("| Id:" + store.Id);
                 Console.Write(" Location:" + store.Location + "|\n");
             }
-            Console.WriteLine("Enter Id of the Store You want order History");
+            Console.Write("\n Enter Id of the Store You want order History \n");
             selection = int.Parse(Console.ReadLine());
            
             OrderRepo orderhistory = new OrderRepo();
             var allorders = orderhistory.GetAllOrders();
+            Console.WriteLine("\n-------------Order History----------------\n");
              foreach (var order in allorders)
              {
                  if (selection == order.StoreId)
                  {
-                    Console.Write("\n|  Date and Time of Order : " + order.OrderDate + "|");
-                    Console.Write("Store id: " + order.StoreId + "|");
+                    Console.Write("\n\n|  Date and Time of Order : " + order.OrderDate + "|");
+                    Console.Write(" Store id: " + order.StoreId + "|");
                     Console.Write(" Order id : " + order.OrderId + "|");
-                    Console.Write(" Total bill : " + order.TotalBill + "|\n");
+                    Console.Write(" Total bill : " + order.TotalBill + "|\n\n");
                 }
              }
             Console.ReadLine();

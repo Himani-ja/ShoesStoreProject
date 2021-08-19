@@ -36,4 +36,16 @@
     <Brand>Nike</Brand>
     <Quantity>100</Quantity>
   </shoes>
+  <shoes>
+    <StoreId>87757</StoreId>
+    <Id>55646</Id>
+    <Category>Sports</Category>
+    <Size>7.5</Size>
+    <Price>1600</Price>
+    <Color>Brown</Color>
+    <Type>Female</Type>
+    <Lace>Yes</Lace>
+    <Brand>Nike</Brand>
+    <Quantity>34</Quantity>
+  </shoes>
 </ArrayOfShoes>
