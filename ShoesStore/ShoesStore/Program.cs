@@ -10,46 +10,33 @@ namespace ShoesStore
     {
         static void Main(string[] args)
         {
+            Mainmenu();
+            //Display();
 
-            //AddShoes();
-            Display();
         }
-        private static void AddShoes()
+
+        private static void Display()
         {
-            /*ShoesLibrary.shoes shoes1 = new ShoesLibrary.shoes();
-            Console.Write("Please enter shoes Id: ");
-            shoes1.Id = int.Parse(Console.ReadLine());
-            Console.Write("Please enter shoes Category -\npress <1> for Casual_Wear \npress <2> for Sports \npress <3> for Loafer \npress <4> for Boots \npress <5> for Sneakers:");
-            shoes1.Category = (ShoesLibrary.Category)int.Parse(Console.ReadLine());
-            //var cate = shoes1.Category;
-            //Console.Write(shoes1.AddShoes());
-            Console.Write("Please enter shoes brand:");
-            shoes1.Brand = Console.ReadLine();
-            Console.Write("Please enter shoes Type - press <0> for male and press <1> for female: ");
-            shoes1.Type = (ShoesLibrary.Types)int.Parse(Console.ReadLine());
-            Console.Write("Please enter shoes has Lace - press <0> for yes and press <1> for no: ");
-            shoes1.Lace = (ShoesLibrary.Lace)int.Parse(Console.ReadLine());
-            Console.Write("Please enter shoes Color-(Black,White,Blue,Red,Brown,Grey): ");
-            string color = Console.ReadLine();
-            //Console.WriteLine(color);
-            shoes1.Color = (ShoesLibrary.Colors)Enum.Parse(typeof(ShoesLibrary.Colors), color);
-            Console.Write("Please enter shoes size: ");
-            shoes1.Size = double.Parse(Console.ReadLine());
-            Console.Write("Please enter shoes price: ");
-            shoes1.Price = double.Parse(Console.ReadLine());
-            Console.Write("Please enter shoes quantity: ");
-            shoes1.Quantity = int.Parse(Console.ReadLine());
+            FileRepo display = new FileRepo();
+            var allshoes = display.GetAllShoes();
+            Console.WriteLine("Shoes at our satore are");
+            Console.WriteLine("--------+++++-------+++++--------");
+            foreach (var shoes in allshoes)
+            {
 
-
-
-            FileRepo repo = new FileRepo();
-
-
-
-            //Console.WriteLine(cate);
-            var addshoes = repo.Init(shoes1.Id, (ShoesData.Category)shoes1.Category, shoes1.Size, shoes1.Price, (ShoesData.Colors)shoes1.Color, (ShoesData.Types)shoes1.Type, (ShoesData.Lace)shoes1.Lace, shoes1.Brand, shoes1.Quantity);
-            repo.Addshoes(addshoes);*/
-
+                Console.Write("| id:" + shoes.Id);
+                Console.Write(" category:" + shoes.Category + "|");
+                Console.Write(" Brand:" + shoes.Brand + "|");
+                Console.Write(" Type:" + shoes.Type + "|");
+                Console.Write(" Lace:" + shoes.Lace + "|");
+                Console.Write(" Size:" + shoes.Size + "|");
+                Console.Write(" Color:" + shoes.Color + "|");
+                Console.Write(" Price:" + shoes.Price + "|");
+                Console.Write(" Quantity:" + shoes.Quantity + "| \n");
+            }
+        }
+        static void Mainmenu()
+        {
             CustomerLogin csl = new CustomerLogin();
             AdminLogin adLogin = new AdminLogin();
             int action = menu();
@@ -78,12 +65,14 @@ namespace ShoesStore
                         //ContinueOrExit();
                         break;
                     case 3:
-                        ContinueOrExit();
-                        Console.Clear();
+                        Display();
+                        // ContinueOrExit();
+                        //Console.Clear();
+                      //  System.Environment.Exit(0);
                         Console.ReadLine();
                         break;
                 }
-              //  ContinueOrExit();
+                //  ContinueOrExit();
                 Console.Clear();
                 action = menu();
 
@@ -92,11 +81,12 @@ namespace ShoesStore
                 // AddStore();
 
             }
-
+        }
+           
 
             static int menu()
             {
-                Console.WriteLine("<1> User Login\n <2>Admin Login");
+                Console.WriteLine("<1> User Login\n <2>Admin Login<\n <3>Exit");
                 Console.Write("Selection : ");
                 int ip = Int32.Parse(Console.ReadLine());
                 return ip;
@@ -112,32 +102,5 @@ namespace ShoesStore
                     menu();
                 }
             }
-            
-
-        }
-
-        private static void Display()
-        {
-            FileRepo display = new FileRepo();
-            var allshoes = display.GetAllShoes();
-            Console.WriteLine("Shoes at our satore are");
-            Console.WriteLine("--------+++++-------+++++--------");
-            foreach (var shoes in allshoes)
-            {
-
-                Console.Write("| id:" + shoes.Id);
-                Console.Write(" category:" + shoes.Category + "|");
-                Console.Write(" Brand:" + shoes.Brand +"|");
-                Console.Write(" Type:" + shoes.Type + "|");
-                Console.Write(" Lace:" + shoes.Lace + "|");
-                Console.Write(" Size:" + shoes.Size + "|");
-                Console.Write(" Color:" + shoes.Color + "|");
-                Console.Write(" Price:" + shoes.Price+ "|");
-                Console.Write(" Quantity:"+ shoes.Quantity+ "| \n");
-
-
-
-            }
-        }
+        }   
     }
-}

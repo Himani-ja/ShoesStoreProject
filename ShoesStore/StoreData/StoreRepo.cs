@@ -12,7 +12,7 @@ namespace StoreData
     public class FileRepoStore
     {
         static List<Store> stores = null;
-        static string path1 = @"D:\Training1\pro\dotnet\ShoesStore\StoreData\storedata.xml";
+        static string path1 = @"..\..\..\..\StoreData\storedata.xml";
         public List<Store> Init(int id, string location)
         {
 

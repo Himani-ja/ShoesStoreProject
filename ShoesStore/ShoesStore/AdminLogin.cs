@@ -16,7 +16,6 @@ namespace ShoesStore
         {
             if (username == "admin" && password == "admin")
             {
-                
                  int action = menu1();
               
                 while (action !=0)

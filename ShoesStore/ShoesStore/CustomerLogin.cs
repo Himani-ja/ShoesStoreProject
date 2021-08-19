@@ -9,6 +9,7 @@ namespace ShoesStore
 {
     public class CustomerLogin
     {
+        
         public void Login(string username, string password)
         {
             if(username == "user" && password == "123")
@@ -23,28 +24,27 @@ namespace ShoesStore
                         AddCustomer();
                             break;
                         case 2:
-                            Console.Clear();
-                            Console.ReadLine();
-                            
-                            break;
-                    }
+                        Display();
+                        // Console.Clear();
+                        //Console.ReadLine();
+                        break;
+                    case 3:
+                        System.Environment.Exit(0);
+                        break;      
+                }
                 action = menu1();
-
             }
             else
             {
                 Console.WriteLine("Wrong Credentials...");
-                
-                
             }
-
         }
 
 
         public int menu1()
         {
-            Console.Clear();
-            Console.WriteLine("<1> Add Customer\n <0>Exit");
+            Console.Clear(); //remove this to see display
+            Console.WriteLine("<1> Add Customer\n <2>Display product List \n <3>Exit");
             Console.Write("Selection : ");
             int ip = Int32.Parse(Console.ReadLine());
             return ip;
@@ -72,5 +72,29 @@ namespace ShoesStore
             var addcustomer = c_repo.Init(customer.C_Id, customer.C_name, customer.C_Email, customer.C_contact, customer.C_location);
             c_repo.AddCustomer(addcustomer);
         }
+
+
+
+        private static void Display()
+        {
+            FileRepo display = new FileRepo();
+            var allshoes = display.GetAllShoes();
+            Console.WriteLine("Shoes at our satore are");
+            Console.WriteLine("--------+++++-------+++++--------");
+            foreach (var shoes in allshoes)
+            {
+
+                Console.Write("| id:" + shoes.Id);
+                Console.Write(" category:" + shoes.Category + "|");
+                Console.Write(" Brand:" + shoes.Brand + "|");
+                Console.Write(" Type:" + shoes.Type + "|");
+                Console.Write(" Lace:" + shoes.Lace + "|");
+                Console.Write(" Size:" + shoes.Size + "|");
+                Console.Write(" Color:" + shoes.Color + "|");
+                Console.Write(" Price:" + shoes.Price + "|");
+                Console.Write(" Quantity:" + shoes.Quantity + "| \n");
+            }
+        }
+
     }
 }

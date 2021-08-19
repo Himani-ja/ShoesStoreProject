@@ -11,7 +11,7 @@ namespace CustData
    public class CustRepo
     {
         static List<Customer> Custs = null;
-        static string path = @"C:\Projectshoes\ShoesStoreProject\ShoesStore\CustData\CustomerData.xml";
+        static string path = @"..\..\..\..\CustData\CustomerData.xml";
         public List<Customer> Init(int Id,  string name,string email,Int32 contact,string locat)
         {
             //Console.WriteLine("hello");
