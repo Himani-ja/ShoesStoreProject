@@ -10,4 +10,9 @@
     <OrderId>55845</OrderId>
     <TotalBill>900</TotalBill>
   </orders>
+  <orders>
+    <StoreId>12</StoreId>
+    <OrderId>66720</OrderId>
+    <TotalBill>664</TotalBill>
+  </orders>
 </ArrayOfOrders>

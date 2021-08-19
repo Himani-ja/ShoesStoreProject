@@ -4,13 +4,15 @@ using ShoesLibrary;
 using ShoesData;
 using CustData;
 using StoreData;
-
+using OrderData;
 namespace ShoesStore
 {
     public class CustomerLogin
     {
         public void Login(string username, string password)
         {
+            OrderData.Order Cart = new OrderData.Order();
+            
             CustomerLoginRepo loginobj = new CustomerLoginRepo();
             var username1= loginobj.GetCustomerlogin(username);
             string user_name = Convert.ToString(username1.C_UserName);
@@ -20,11 +22,13 @@ namespace ShoesStore
                 //Console.Clear();
                  int action = menu1();
                  
-                 int select = int.Parse(Console.ReadLine());
-                switch (select)
+                 
+                switch (action)
                     {
                         case 1:
-                            Console.WriteLine("choose Shoes category");
+                        Console.WriteLine("Hello ........");
+                            Cart.StoreSelection();
+                            
                             break;
                         case 2:
                             Console.Clear();
