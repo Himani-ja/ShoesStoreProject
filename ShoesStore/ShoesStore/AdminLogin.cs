@@ -35,6 +35,7 @@ namespace ShoesStore
                           //  ContinueOrExit1();
                             break;
                         case 3:
+                            SearchCustomer();
                            // ContinueOrExit1();
                           //  Console.Clear();
                            // Console.ReadLine();
@@ -55,7 +56,7 @@ namespace ShoesStore
         public int menu1()
         {
             Console.Clear();
-            Console.WriteLine("<1> Add Shoes Details \n <2>Add Store Information <0>Exit");
+            Console.WriteLine("<1> Add Shoes Details \n<2> Add Store Information \n<3> Search Customer by name <0> Exit");
             Console.Write("Selection : ");
             int ip = Int32.Parse(Console.ReadLine());
             return ip;
@@ -80,6 +81,22 @@ namespace ShoesStore
         }
         private static void AddShoes()
         {
+            FileRepoStore display = new FileRepoStore();
+            var allstores = display.GetAllStores();
+            Console.WriteLine("Choose Store :");
+            foreach (var store in allstores)
+            {
+
+                Console.Write("| Id:" + store.Id);
+                Console.Write(" Location:" + store.Location + "|\n");
+
+            }
+            int id;
+            id=int.Parse(Console.ReadLine());
+           
+            var storeid=display.GetStore(id);
+            Console.WriteLine(storeid.Id);
+
             ShoesLibrary.shoes shoes1 = new ShoesLibrary.shoes();
             Console.Write("Please enter shoes Id: ");
             shoes1.Id = int.Parse(Console.ReadLine());
@@ -111,7 +128,7 @@ namespace ShoesStore
 
 
             //Console.WriteLine(cate);
-            var addshoes = repo.Init(shoes1.Id, (ShoesData.Category)shoes1.Category, shoes1.Size, shoes1.Price, (ShoesData.Colors)shoes1.Color, (ShoesData.Types)shoes1.Type, (ShoesData.Lace)shoes1.Lace, shoes1.Brand, shoes1.Quantity);
+            var addshoes = repo.Init(storeid.Id,shoes1.Id, (ShoesData.Category)shoes1.Category, shoes1.Size, shoes1.Price, (ShoesData.Colors)shoes1.Color, (ShoesData.Types)shoes1.Type, (ShoesData.Lace)shoes1.Lace, shoes1.Brand, shoes1.Quantity);
             repo.Addshoes(addshoes);
 
         }
@@ -125,6 +142,24 @@ namespace ShoesStore
             StoreData.FileRepoStore Repo2 = new StoreData.FileRepoStore();
             var addStore = Repo2.Init(store1.Id, store1.Location);
             Repo2.Addstore(addStore);
+        }
+
+        private static void SearchCustomer()
+        {
+            Console.WriteLine("\n--Search Customer by Name --\n");
+            CustRepo display = new CustRepo();
+            string name;
+            Console.Write("Enter Customer Name :");
+            name = Console.ReadLine();
+
+            var storename = display.GetCustomer(name);
+
+            Console.WriteLine("Id : "+storename.C_Id);
+            Console.WriteLine("Name :"+storename.C_name);
+            Console.WriteLine("Email :"+storename.C_Email);
+            Console.WriteLine("Location : "+storename.C_location);
+            Console.ReadLine();
+
         }
     }
 }
