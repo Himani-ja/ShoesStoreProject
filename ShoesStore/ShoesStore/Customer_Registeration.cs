@@ -12,10 +12,12 @@ namespace ShoesStore
     {
         public  void AddCustomer()
         {
+
             ShoesLibrary.Customer customer = new ShoesLibrary.Customer();
             ShoesLibrary.CustomerCredential cus_credential = new ShoesLibrary.CustomerCredential();
-            Console.Write("Customer Id: ");
-            customer.C_Id = int.Parse(Console.ReadLine());
+            Random uniqueid = new Random();
+            int randomnum = uniqueid.Next(10001, 100000);
+            customer.C_Id = randomnum;
 
             Console.Write("Customer name: ");
             customer.C_name = Console.ReadLine();

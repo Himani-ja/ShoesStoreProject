@@ -91,15 +91,20 @@ namespace ShoesStore
                 Console.Write(" Location:" + store.Location + "|\n");
 
             }
+           
+            
             int id;
             id=int.Parse(Console.ReadLine());
-           
             var storeid=display.GetStore(id);
-            Console.WriteLine(storeid.Id);
+            //Console.WriteLine(storeid.Id);
 
+            
             ShoesLibrary.shoes shoes1 = new ShoesLibrary.shoes();
-            Console.Write("Please enter shoes Id: ");
-            shoes1.Id = int.Parse(Console.ReadLine());
+            // Console.Write("Please enter shoes Id: ");
+            // shoes1.Id = int.Parse(Console.ReadLine());
+            Random uniqueid = new Random();
+            int randomnum = uniqueid.Next(10001, 100000);
+            shoes1.Id = randomnum;
             Console.Write("Please enter shoes Category -\npress <1> for Casual_Wear \npress <2> for Sports \npress <3> for Loafer \npress <4> for Boots \npress <5> for Sneakers:");
             shoes1.Category = (ShoesLibrary.Category)int.Parse(Console.ReadLine());
             //var cate = shoes1.Category;
@@ -135,8 +140,11 @@ namespace ShoesStore
         private static void AddStore()
         {
             StoreData.Store store1 = new StoreData.Store();
-            Console.Write("Store Id: ");
-            store1.Id = int.Parse(Console.ReadLine());
+
+            Random uniqueid = new Random();
+            int randomnum = uniqueid.Next(10001, 100000);
+            store1.Id = randomnum;
+
             Console.Write("Store Location: ");
             store1.Location = Console.ReadLine();
             StoreData.FileRepoStore Repo2 = new StoreData.FileRepoStore();

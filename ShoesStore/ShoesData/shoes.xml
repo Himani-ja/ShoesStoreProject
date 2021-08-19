@@ -48,4 +48,28 @@
     <Brand>Poma</Brand>
     <Quantity>23</Quantity>
   </shoes>
+  <shoes>
+    <StoreId>43</StoreId>
+    <Id>10379</Id>
+    <Category>Sneakers</Category>
+    <Size>3.8</Size>
+    <Price>900</Price>
+    <Color>Blue</Color>
+    <Type>Male</Type>
+    <Lace>No</Lace>
+    <Brand>puma</Brand>
+    <Quantity>899</Quantity>
+  </shoes>
+  <shoes>
+    <StoreId>12</StoreId>
+    <Id>61696</Id>
+    <Category>Sports</Category>
+    <Size>6.9</Size>
+    <Price>566</Price>
+    <Color>Black</Color>
+    <Type>Male</Type>
+    <Lace>No</Lace>
+    <Brand>puma</Brand>
+    <Quantity>90</Quantity>
+  </shoes>
 </ArrayOfShoes>

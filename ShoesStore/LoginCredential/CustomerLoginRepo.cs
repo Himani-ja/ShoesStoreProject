@@ -28,7 +28,7 @@ namespace LoginCredential
         // login details store in xml
         public void AddCustomerCredential(List<CustomerCredential> customerdetial)
         {
-            /*StreamWriter writer = new StreamWriter(path1);
+           /* StreamWriter writer = new StreamWriter(path1);
             XmlSerializer serializer = new XmlSerializer(typeof(List<CustomerCredential>));
             serializer.Serialize(writer, customerdetial);
 
@@ -36,6 +36,7 @@ namespace LoginCredential
 
             if (!File.Exists(path1))
             {
+               
                 XmlSerializer xSeriz = new XmlSerializer(typeof(List<CustomerCredential>));
                 FileStream fs = File.Open(path1, FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
                 xSeriz.Serialize(fs, customerdetial);
@@ -75,13 +76,13 @@ namespace LoginCredential
         {
             XmlSerializer deserializer = null;
             List<CustomerCredential> allloginCredential = null;
-            //try
-            //{
+            try
+            {
                 using StreamReader reader = new StreamReader(_path);
                 deserializer = new XmlSerializer(typeof(List<CustomerCredential>));
                 allloginCredential = (List<CustomerCredential>)deserializer.Deserialize(reader);
-            //}
-           /* catch (DirectoryNotFoundException ex)
+            }
+            catch (DirectoryNotFoundException ex)
             {
                 System.Console.WriteLine("Invalid path to the file");
             }
@@ -92,14 +93,14 @@ namespace LoginCredential
             catch (Exception ex)
             {
                 Console.WriteLine("Exception"+ex);
-            }*/
+            }
             if (allloginCredential != null)
             {
                 if (allloginCredential.Count > 0)
                     return allloginCredential;
             }
-           
-                //throw new System.NullReferenceException();
+            else
+                  throw new System.NullReferenceException();
             return null;
         }
        
