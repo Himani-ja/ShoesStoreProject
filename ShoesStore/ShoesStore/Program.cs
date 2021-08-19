@@ -15,7 +15,7 @@ namespace ShoesStore
         {
 
             //AddShoes();
-            DoOrder();
+            //DoOrder();
             Program programobj = new Program();
             programobj.Home();
 
@@ -151,10 +151,6 @@ namespace ShoesStore
 
             }
         }
-     private static void DoOrder()
-        {
-            Order ord = new Order();
-            ord.StoreSelection();
-        }
+  
     }
 }
