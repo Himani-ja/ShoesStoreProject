@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfOrders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <orders>
+    <StoreId>12</StoreId>
+    <OrderId>73801</OrderId>
+    <TotalBill>9800</TotalBill>
+  </orders>
+  <orders>
+    <StoreId>12</StoreId>
+    <OrderId>55845</OrderId>
+    <TotalBill>900</TotalBill>
+  </orders>
+</ArrayOfOrders>

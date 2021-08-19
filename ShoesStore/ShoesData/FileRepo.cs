@@ -102,5 +102,12 @@ namespace ShoesData
                 throw new System.NullReferenceException();
             return null;
         }
+        public shoes GetShoes(int id)
+        {
+            var shoes = GetAllShoes();
+            var shoe = shoes.Where<shoes>(x => x.Id == id).FirstOrDefault();
+
+            return shoe;
+        }
     }
 }

@@ -3,7 +3,9 @@ using ShoesLibrary;
 using ShoesData;
 using CustData;
 using StoreData;
+using OrderData;
 using LoginCredential;
+
 
 namespace ShoesStore
 {
@@ -11,8 +13,12 @@ namespace ShoesStore
     {
         static void Main(string[] args)
         {
+
+            //AddShoes();
+            DoOrder();
             Program programobj = new Program();
             programobj.Home();
+
             //DisplayStores();
             //DisplayCredential();
         }
@@ -126,6 +132,8 @@ namespace ShoesStore
                 Console.Write("| Id:" + store.Id);
                 Console.Write(" Location:" + store.Location + "|\n");
 
+
+
             }
         }
         private static void DisplayCredential()
@@ -140,7 +148,13 @@ namespace ShoesStore
                 Console.Write("| Id:" + store.C_UserName);
                 Console.Write(" Location:" + store.C_Password + "|\n");
 
+
             }
+        }
+     private static void DoOrder()
+        {
+            Order ord = new Order();
+            ord.StoreSelection();
         }
     }
 }

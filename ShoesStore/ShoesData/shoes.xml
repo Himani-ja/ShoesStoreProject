@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfShoes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <shoes>
+	  <StoreId>43</StoreId>
     <Id>2</Id>
     <Category>Casual_Wear</Category>
     <Size>9</Size>
@@ -12,6 +13,7 @@
     <Quantity>111</Quantity>
   </shoes>
   <shoes>
+	  <StoreId>12</StoreId>
     <Id>1</Id>
     <Category>Sports</Category>
     <Size>7.5</Size>
@@ -23,6 +25,7 @@
     <Quantity>100</Quantity>
   </shoes>
   <shoes>
+	  <StoreId>12</StoreId>
     <Id>43</Id>
     <Category>Boots</Category>
     <Size>7.5</Size>
