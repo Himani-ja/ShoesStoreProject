@@ -69,9 +69,40 @@ namespace ShoesLibrary
                 c_location = value;
             }
         }
+        
+        
+
+
         public string AddShoes()
         {
             return $"\nId: {C_Id} \n Name {C_name}\n Contact no.: {C_contact}\nLocation:{C_location}";
+        }
+    }
+    public class CustomerCredential
+    {
+        string c_username;
+        public string C_UserName
+        {
+            get
+            {
+                return c_username;
+            }
+            set
+            {
+                c_username = value;
+            }
+        }
+        string c_password;
+        public string C_Password
+        {
+            get
+            {
+                return c_password;
+            }
+            set
+            {
+                c_password = value;
+            }
         }
     }
 }

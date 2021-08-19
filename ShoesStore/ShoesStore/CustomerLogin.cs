@@ -1,5 +1,5 @@
 ﻿using System;
-
+using LoginCredential;
 using ShoesLibrary;
 using ShoesData;
 using CustData;
@@ -11,30 +11,34 @@ namespace ShoesStore
     {
         public void Login(string username, string password)
         {
-            if(username == "user" && password == "123")
+            CustomerLoginRepo loginobj = new CustomerLoginRepo();
+            var username1= loginobj.GetCustomerlogin(username);
+            string user_name = Convert.ToString(username1.C_UserName);
+            string user_pass = Convert.ToString(username1.C_Password);
+            if (user_name == username && user_pass == password)
             {
                 //Console.Clear();
-                int action = menu1();
-                //   Console.WriteLine("<1> Add Customer\n <2>Exit");
-                //  int action = int.Parse(Console.ReadLine());
-                switch (action)
+                 int action = menu1();
+                 
+                 int select = int.Parse(Console.ReadLine());
+                switch (select)
                     {
                         case 1:
-                        AddCustomer();
+                            Console.WriteLine("choose Shoes category");
                             break;
                         case 2:
                             Console.Clear();
                             Console.ReadLine();
-                            
                             break;
                     }
-                action = menu1();
+                //action = menu1();
 
             }
             else
             {
                 Console.WriteLine("Wrong Credentials...");
-                
+                Program program = new Program();
+                program.Home();
                 
             }
 
@@ -44,33 +48,12 @@ namespace ShoesStore
         public int menu1()
         {
             Console.Clear();
-            Console.WriteLine("<1> Add Customer\n <0>Exit");
+            Console.WriteLine("<1>Do Shopping\n<2>Order history\n<3>Exit");
             Console.Write("Selection : ");
             int ip = Int32.Parse(Console.ReadLine());
             return ip;
             // performSelectionAction(ip);
         }
-        private static void AddCustomer()
-        {
-            ShoesLibrary.Customer customer = new ShoesLibrary.Customer();
-            Console.Write("Customer Id: ");
-            customer.C_Id = int.Parse(Console.ReadLine());
-
-            Console.Write("Customer name: ");
-            customer.C_name = Console.ReadLine();
-
-            Console.Write("Customer Email: ");
-            customer.C_Email = Console.ReadLine();
-
-            Console.Write("Customer contact number: ");
-            customer.C_contact = Int32.Parse(Console.ReadLine());
-
-            Console.Write("Customer Location: ");
-            customer.C_location = Console.ReadLine();
-            CustRepo c_repo = new CustRepo();
-
-            var addcustomer = c_repo.Init(customer.C_Id, customer.C_name, customer.C_Email, customer.C_contact, customer.C_location);
-            c_repo.AddCustomer(addcustomer);
-        }
+       
     }
 }

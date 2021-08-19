@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CustData\CustData.csproj" />
     <ProjectReference Include="..\OrderData\OrderData.csproj" />
+    <ProjectReference Include="..\LoginCredential\LoginCredential.csproj" />
     <ProjectReference Include="..\ShoesData\ShoesData.csproj" />
     <ProjectReference Include="..\ShoesLibrary\ShoesLibrary.csproj" />
     <ProjectReference Include="..\StoreData\StoreData.csproj" />

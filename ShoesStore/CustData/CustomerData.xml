@@ -20,5 +20,67 @@
     <C_Email>Mauryav87@gmail.com</C_Email>
     <C_contact>7754</C_contact>
     <C_location>Uttar Pradesh</C_location>
+
+    <C_Id>4</C_Id>
+    <C_name>himani</C_name>
+    <C_Email>himani@gmil.com</C_Email>
+    <C_contact>123455</C_contact>
+    <C_location>mumbai</C_location>
+  </Customer>
+  <Customer>
+    <C_Id>5</C_Id>
+    <C_name>himani</C_name>
+    <C_Email>himani.@</C_Email>
+    <C_contact>876422</C_contact>
+    <C_location>mumbai</C_location>
+  </Customer>
+  <Customer>
+    <C_Id>3</C_Id>
+    <C_name>hima</C_name>
+    <C_Email>hikm</C_Email>
+    <C_contact>34678</C_contact>
+    <C_location>mumn</C_location>
+  </Customer>
+  <Customer>
+    <C_Id>5</C_Id>
+    <C_name>uma</C_name>
+    <C_Email>gik</C_Email>
+    <C_contact>2345</C_contact>
+    <C_location>mumbai</C_location>
+  </Customer>
+  <Customer>
+    <C_Id>66</C_Id>
+    <C_name>him</C_name>
+    <C_Email>jdi</C_Email>
+    <C_contact>3234</C_contact>
+    <C_location>kmdk</C_location>
+  </Customer>
+  <Customer>
+    <C_Id>1</C_Id>
+    <C_name>kil</C_name>
+    <C_Email>kdm</C_Email>
+    <C_contact>123455</C_contact>
+    <C_location>hlm</C_location>
+  </Customer>
+  <Customer>
+    <C_Id>1</C_Id>
+    <C_name>him</C_name>
+    <C_Email>hj</C_Email>
+    <C_contact>565678</C_contact>
+    <C_location>nmn</C_location>
+  </Customer>
+  <Customer>
+    <C_Id>1</C_Id>
+    <C_name>jh</C_name>
+    <C_Email>bghjj</C_Email>
+    <C_contact>5657</C_contact>
+    <C_location>hjghj</C_location>
+  </Customer>
+  <Customer>
+    <C_Id>1</C_Id>
+    <C_name>him</C_name>
+    <C_Email>hjjk</C_Email>
+    <C_contact>3454</C_contact>
+    <C_location>ghhj</C_location>
   </Customer>
 </ArrayOfCustomer>

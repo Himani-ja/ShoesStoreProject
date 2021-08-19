@@ -10,9 +10,14 @@ namespace CustData
             public String C_Email { get; set; }
             public Int32 C_contact { get; set; }
             public String C_location { get; set; }
+        }
 
+   /* public class CustomerCredential
+    {
+        public int Customer_ID { get; set; }
+        public string C_UserName { get; set; }
+        public string C_Password { get; set; }
 
-
-    }
+    }*/
 }
 
