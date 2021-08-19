@@ -22,4 +22,27 @@
     <Brand>puma</Brand>
     <Quantity>100</Quantity>
   </shoes>
+  <shoes>
+    <Id>43</Id>
+    <Category>Boots</Category>
+    <Size>7.5</Size>
+    <Price>8900</Price>
+    <Color>Brown</Color>
+    <Type>Female</Type>
+    <Lace>Yes</Lace>
+    <Brand>Nike</Brand>
+    <Quantity>457</Quantity>
+  </shoes>
+  <shoes>
+    <StoreId>12</StoreId>
+    <Id>56</Id>
+    <Category>Loafer</Category>
+    <Size>3.6</Size>
+    <Price>3400</Price>
+    <Color>Red</Color>
+    <Type>Male</Type>
+    <Lace>Yes</Lace>
+    <Brand>Poma</Brand>
+    <Quantity>23</Quantity>
+  </shoes>
 </ArrayOfShoes>

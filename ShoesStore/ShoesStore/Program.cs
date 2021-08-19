@@ -10,9 +10,8 @@ namespace ShoesStore
     {
         static void Main(string[] args)
         {
-
-            //AddShoes();
-            Display();
+            AddShoes();
+            //DisplayStores();
         }
         private static void AddShoes()
         {
@@ -116,11 +115,11 @@ namespace ShoesStore
 
         }
 
-        private static void Display()
+        private static void DisplayShoes()
         {
             FileRepo display = new FileRepo();
             var allshoes = display.GetAllShoes();
-            Console.WriteLine("Shoes at our satore are");
+            Console.WriteLine("Shoes at our store are");
             Console.WriteLine("--------+++++-------+++++--------");
             foreach (var shoes in allshoes)
             {
@@ -134,6 +133,23 @@ namespace ShoesStore
                 Console.Write(" Color:" + shoes.Color + "|");
                 Console.Write(" Price:" + shoes.Price+ "|");
                 Console.Write(" Quantity:"+ shoes.Quantity+ "| \n");
+
+
+
+            }
+        }
+        private static void DisplayStores()
+        {
+            FileRepoStore display = new FileRepoStore();
+            var allstores = display.GetAllStores();
+            Console.WriteLine("Stores are");
+            Console.WriteLine("--------+++++-------+++++--------");
+            foreach (var store in allstores)
+            {
+
+                Console.Write("| Id:" + store.Id);
+                Console.Write(" Location:" + store.Location + "|\n");
+               
 
 
 

@@ -25,6 +25,7 @@ namespace ShoesData
     }
     public class shoes
     {
+        public int StoreId { get; set; }
         public int Id { get; set; }
         public Category Category { get; set; }
         public double Size { get; set; }
