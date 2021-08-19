@@ -12,11 +12,11 @@ namespace ShoesData
     public class FileRepo
     {
         static List<shoes> cats = null;
-        static string path = @"C:\Projectshoes\ShoesStoreProject\ShoesStore\ShoesData\shoes.xml";
-        public List<shoes> Init(int id,Category category,double size,double price,Colors color,Types type,Lace lace,string brand,int quantity)
+        public string path = @"..\..\..\..\ShoesData\shoes.xml";
+        public List<shoes> Init(int sid,int id,Category category,double size,double price,Colors color,Types type,Lace lace,string brand,int quantity)
         {
             cats = new List<shoes>(){
-                    new shoes(){Id=id,Category=category,Size=size,Price=price,Color=color,Type=type,Lace=lace,Brand=brand,Quantity=quantity},
+                    new shoes(){StoreId=sid,Id=id,Category=category,Size=size,Price=price,Color=color,Type=type,Lace=lace,Brand=brand,Quantity=quantity},
 
                     
                 };
@@ -71,7 +71,7 @@ namespace ShoesData
             System.Console.WriteLine("All cats has bee stored in the XML file at {0}", path);
         }
 
-        public IEnumerable<shoes> GetAllShoes(string _path = @"C:\Projectshoes\ShoesStoreProject\ShoesStore\ShoesData\shoes.xml")
+        public IEnumerable<shoes> GetAllShoes(string _path = @"..\..\..\..\ShoesData\shoes.xml")
         {
             XmlSerializer deserializer = null;
             List<shoes> allshoes = null;
