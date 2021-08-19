@@ -66,7 +66,7 @@ namespace StoreData
                 doc.Save(path1);
             }
 
-            System.Console.WriteLine("All stores has bee stored in the XML file at {0}", path1);
+            System.Console.WriteLine("All stores has been stored in the XML file at {0}", path1);
         }
 
         public IEnumerable<Store> GetAllStores(string _path = @"..\..\..\..\StoreData\storedata.xml")

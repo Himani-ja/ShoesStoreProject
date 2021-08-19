@@ -3,6 +3,7 @@ using ShoesLibrary;
 using ShoesData;
 using CustData;
 using StoreData;
+using OrderData;
 
 namespace ShoesStore
 {
@@ -10,7 +11,8 @@ namespace ShoesStore
     {
         static void Main(string[] args)
         {
-            AddShoes();
+            //AddShoes();
+            DoOrder();
             //DisplayStores();
         }
         private static void AddShoes()
@@ -149,11 +151,13 @@ namespace ShoesStore
 
                 Console.Write("| Id:" + store.Id);
                 Console.Write(" Location:" + store.Location + "|\n");
-               
-
-
 
             }
+        }
+     private static void DoOrder()
+        {
+            Order ord = new Order();
+            ord.StoreSelection();
         }
     }
 }

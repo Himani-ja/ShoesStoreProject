@@ -14,4 +14,11 @@
     <C_contact>12321232</C_contact>
     <C_location>Chembur</C_location>
   </Customer>
+  <Customer>
+    <C_Id>56</C_Id>
+    <C_name>Vivek</C_name>
+    <C_Email>Mauryav87@gmail.com</C_Email>
+    <C_contact>7754</C_contact>
+    <C_location>Uttar Pradesh</C_location>
+  </Customer>
 </ArrayOfCustomer>

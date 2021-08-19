@@ -1,14 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CustData\CustData.csproj" />
     <ProjectReference Include="..\ShoesData\ShoesData.csproj" />
+    <ProjectReference Include="..\ShoesLibrary\ShoesLibrary.csproj" />
     <ProjectReference Include="..\StoreData\StoreData.csproj" />
-
   </ItemGroup>
 
 </Project>
