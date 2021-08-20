@@ -65,6 +65,7 @@ namespace OrderData
               }
 
             System.Console.WriteLine("All orders stored in the XML file at {0}", path);
+            Console.ReadLine();
             }
         public IEnumerable<orders> GetAllOrders(string _path = @"..\..\..\..\OrderData\Orders.xml")
         {

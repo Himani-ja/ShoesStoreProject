@@ -21,4 +21,11 @@
     <C_contact>987654345</C_contact>
     <C_location>Mumbai</C_location>
   </Customer>
-</ArrayOfCustomer>
+  <Customer>
+    <C_Id>98388</C_Id>
+    <C_name>Nikita Bhoir</C_name>
+    <C_Email>Nik@gmail.com</C_Email>
+    <C_contact>9876543212</C_contact>
+    <C_location>Mumbai</C_location>
+  </Customer>
+  </ArrayOfCustomer>

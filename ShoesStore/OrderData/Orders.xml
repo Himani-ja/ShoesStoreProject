@@ -28,6 +28,7 @@
     <TotalBill>900</TotalBill>
     <OrderDate>8/19/2021 11:12:53 PM</OrderDate>
   </orders>
+
   <orders>
     <StoreId>87757</StoreId>
     <Customer_Id>98062</Customer_Id>
@@ -70,4 +71,6 @@
     <TotalBill>2100</TotalBill>
     <OrderDate>8/20/2021 12:50:27 PM</OrderDate>
   </orders>
-</ArrayOfOrders>
+
+  </ArrayOfOrders>
+

@@ -24,6 +24,7 @@
     <Brand>Nike</Brand>
     <Quantity>100</Quantity>
   </shoes>
+
   <shoes>
     <StoreId>87757</StoreId>
     <Id>55646</Id>
@@ -48,4 +49,5 @@
     <Brand>Nike</Brand>
     <Quantity>99</Quantity>
   </shoes>
+
 </ArrayOfShoes>

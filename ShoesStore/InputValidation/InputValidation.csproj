@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CustData\CustData.csproj" />
+    <ProjectReference Include="..\LoginCredential\LoginCredential.csproj" />
+  </ItemGroup>
+
+</Project>
