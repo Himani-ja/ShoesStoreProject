@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfShoes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <shoes>
-    <StoreId>39868</StoreId>
-    <Id>35999</Id>
-    <Category>Sports</Category>
-    <Size>7.5</Size>
-    <Price>900</Price>
-    <Color>Blue</Color>
-    <Type>Male</Type>
-    <Lace>No</Lace>
-    <Brand>Nike</Brand>
-    <Quantity>100</Quantity>
-  </shoes>
-  <shoes>
     <StoreId>53970</StoreId>
     <Id>69108</Id>
     <Category>Casual_Wear</Category>
@@ -22,7 +10,7 @@
     <Type>Male</Type>
     <Lace>Yes</Lace>
     <Brand>Puma</Brand>
-    <Quantity>100</Quantity>
+    <Quantity>87</Quantity>
   </shoes>
   <shoes>
     <StoreId>26727</StoreId>
@@ -47,5 +35,17 @@
     <Lace>Yes</Lace>
     <Brand>Nike</Brand>
     <Quantity>34</Quantity>
+  </shoes>
+  <shoes>
+    <StoreId>39868</StoreId>
+    <Id>35999</Id>
+    <Category>Sports</Category>
+    <Size>7.5</Size>
+    <Price>900</Price>
+    <Color>Blue</Color>
+    <Type>Male</Type>
+    <Lace>No</Lace>
+    <Brand>Nike</Brand>
+    <Quantity>99</Quantity>
   </shoes>
 </ArrayOfShoes>

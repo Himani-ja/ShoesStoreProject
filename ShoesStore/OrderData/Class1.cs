@@ -4,6 +4,9 @@ using ShoesData;
 using ShoesLibrary;
 using System.Data;
 
+using System.Xml.Linq;
+using System.Linq;
+
 namespace OrderData
 {
     public class Order
@@ -63,14 +66,11 @@ namespace OrderData
                 
                 foreach (var shoes in allshoes)
                 {
-
+                string id = Convert.ToString(shoes.Id);
                     if (shoes.Id == shoeselection)
                     {
-                    
-                        var decreaseqty = display.GetShoes(shoes.Id);
-                        //Console.WriteLine(decreaseqty.Quantity);
+                        QuantityUpdate(id);                
                         cost = cost + shoes.Price;
-
                     }
 
                 }
@@ -127,6 +127,21 @@ namespace OrderData
             }
             Console.ReadLine();
 
+        }
+
+        public static void QuantityUpdate(string id)
+        {
+            XDocument xdoc = XDocument.Load(@"..\..\..\..\ShoesData\shoes.xml");
+
+            XElement emp = xdoc.Descendants("shoes").FirstOrDefault(p => p.Element("Id").Value == id);
+            if (emp != null)
+            {
+                int quantity = Convert.ToInt32(emp.Element("Quantity").Value);
+                quantity = quantity - 1;
+                emp.Element("Quantity").Value = Convert.ToString(quantity);
+                //xdoc.Root.Add(emp);
+                xdoc.Save(@"..\..\..\..\ShoesData\shoes.xml");
+            }
         }
     }
 }

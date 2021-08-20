@@ -182,6 +182,7 @@ namespace ShoesStore
                  if (selection == order.StoreId)
                  {
                     Console.Write("\n\n|  Date and Time of Order : " + order.OrderDate + "|");
+                    Console.Write(" Customer id: " + order.Customer_Id + "|");
                     Console.Write(" Store id: " + order.StoreId + "|");
                     Console.Write(" Order id : " + order.OrderId + "|");
                     Console.Write(" Total bill : " + order.TotalBill + "|\n\n");
