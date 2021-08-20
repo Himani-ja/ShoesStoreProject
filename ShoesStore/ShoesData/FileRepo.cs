@@ -69,6 +69,7 @@ namespace ShoesData
             }
 
             System.Console.WriteLine("All cats has bee stored in the XML file at {0}", path);
+            Console.ReadLine();
         }
 
         public IEnumerable<shoes> GetAllShoes(string _path = @"..\..\..\..\ShoesData\shoes.xml")

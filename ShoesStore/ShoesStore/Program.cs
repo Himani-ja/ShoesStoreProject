@@ -5,12 +5,14 @@ using CustData;
 using StoreData;
 using OrderData;
 using LoginCredential;
+using InputValidation;
 
 
 namespace ShoesStore
 {
     public class Program
     {
+        InputValidation.Validation choice = new InputValidation.Validation();
         static void Main(string[] args)
         {
            
@@ -36,8 +38,10 @@ namespace ShoesStore
                     case 1:
                         Console.Write("\n Enter Username: ");
                         username = Console.ReadLine();
+                        username = choice.CheckName(username);
                         Console.Write(" Enter Password: ");
                         password = Console.ReadLine();
+                        password = choice.CheckName(password);
                         csl.Login(username, password);
                         break;
                     case 2:
@@ -46,8 +50,10 @@ namespace ShoesStore
                     case 3:
                         Console.Write("\n Enter Username: ");
                         username = Console.ReadLine();
+                        username = choice.CheckName(username);
                         Console.Write(" Enter Password: ");
                         password = Console.ReadLine();
+                        password = choice.CheckName(password);
                         adLogin.Login(username, password);
                         break;
                     case 4:

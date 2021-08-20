@@ -87,6 +87,7 @@ namespace OrderData
                     break;
                 default:
                     Console.WriteLine(" You selected wrong option ");
+                    Console.ReadLine();
                     goto menu;
                   
                 }

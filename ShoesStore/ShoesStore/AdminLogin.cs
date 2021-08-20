@@ -8,11 +8,13 @@ using ShoesData;
 using CustData;
 using StoreData;
 using OrderData;
+using InputValidation;
 
 namespace ShoesStore
 {
-    class AdminLogin
+    public class AdminLogin
     {
+        InputValidation.Validation validate = new InputValidation.Validation();
         public void Login(string username, string password)
         {
             Console.WriteLine("\n-------------Admin Module-----------------\n");
@@ -43,9 +45,9 @@ namespace ShoesStore
                 }
             }
             else
-            {Console.WriteLine("\n--------Wrong Credentials--------\n"); }
-
-
+            {Console.WriteLine("\n--------Wrong Credentials--------\n");
+                Console.ReadLine();
+            }
         }
         public int menu1()
         {
@@ -73,11 +75,11 @@ namespace ShoesStore
             }
  
         }*/
-        private static void AddShoes()
+        private void AddShoes()
         {
             FileRepoStore display = new FileRepoStore();
             var allstores = display.GetAllStores();
-            
+            Console.WriteLine(" Choose Store: ");
             foreach (var store in allstores)
             {
 
@@ -85,10 +87,10 @@ namespace ShoesStore
                 Console.Write(" Location:" + store.Location + "|\n");
 
             }
-
-            Console.Write(" Choose Store : ");
-            int id;
-            id=int.Parse(Console.ReadLine());
+                     
+            int id=0;
+            Console.WriteLine("Enter Store Id : ");
+            id =int.Parse(Console.ReadLine());
             var storeid=display.GetStore(id);
 
             ShoesLibrary.shoes shoes1 = new ShoesLibrary.shoes();
@@ -102,17 +104,18 @@ namespace ShoesStore
 
             Console.Write("\n Please enter shoes brand: ");
             shoes1.Brand = Console.ReadLine();
+            shoes1.Brand = validate.CheckName(shoes1.Brand);
             Console.Write("\n Please enter shoes Type - <0> for male and  <1> for female: ");
             shoes1.Type = (ShoesLibrary.Types)int.Parse(Console.ReadLine());
             Console.Write("\n Please enter shoes has Lace - <0> for yes and <1> for no: ");
             shoes1.Lace = (ShoesLibrary.Lace)int.Parse(Console.ReadLine());
             Console.Write("\n Please enter shoes Color-(Black,White,Blue,Red,Brown,Grey): ");
             string color = Console.ReadLine();
-
+            color = validate.CheckName(color);
             shoes1.Color = (ShoesLibrary.Colors)Enum.Parse(typeof(ShoesLibrary.Colors), color);
             Console.Write("\n Please enter shoes size: ");
             shoes1.Size = double.Parse(Console.ReadLine());
-            Console.Write("\n Please enter shoes price: ");
+            Console.Write("\n Please enter shoes price: $ ");
             shoes1.Price = double.Parse(Console.ReadLine());
             Console.Write("\n Please enter shoes quantity: ");
             shoes1.Quantity = int.Parse(Console.ReadLine());
@@ -122,11 +125,8 @@ namespace ShoesStore
             var addshoes = repo.Init(storeid.Id,shoes1.Id, (ShoesData.Category)shoes1.Category, shoes1.Size, shoes1.Price, (ShoesData.Colors)shoes1.Color, (ShoesData.Types)shoes1.Type, (ShoesData.Lace)shoes1.Lace, shoes1.Brand, shoes1.Quantity);
             repo.Addshoes(addshoes);
 
-            Console.WriteLine("\n Shoes has been added to the store ");
-            Console.ReadLine();
-
         }
-        private static void AddStore()
+        private void AddStore()
         {
             StoreData.Store store1 = new StoreData.Store();
 
@@ -136,29 +136,35 @@ namespace ShoesStore
 
             Console.Write("\n Store Location: ");
             store1.Location = Console.ReadLine();
+            store1.Location = validate.CheckName(store1.Location);
             StoreData.FileRepoStore Repo2 = new StoreData.FileRepoStore();
             var addStore = Repo2.Init(store1.Id, store1.Location);
             Repo2.Addstore(addStore);
-
-            Console.WriteLine("\n Store has been added! ");
-            Console.ReadLine();
         }
 
-        private static void SearchCustomer()
+        private void SearchCustomer()
         {
             Console.WriteLine("\n--Search Customer by Name --\n");
             CustRepo display = new CustRepo();
             string name;
             Console.Write("Enter Customer Name :");
             name = Console.ReadLine();
+            name = validate.CheckName(name);
 
             var storename = display.GetCustomer(name);
-
-            Console.WriteLine("Id : "+storename.C_Id);
-            Console.WriteLine("Name :"+storename.C_name);
-            Console.WriteLine("Email :"+storename.C_Email);
-            Console.WriteLine("Location : "+storename.C_location);
-            Console.ReadLine();
+            if (storename == null)
+            {
+                validate.SearchName(name);
+               // Console.ReadLine();
+            }
+            else
+            {
+                Console.WriteLine("Id : " + storename.C_Id);
+                Console.WriteLine("Name :" + storename.C_name);
+                Console.WriteLine("Email :" + storename.C_Email);
+                Console.WriteLine("Location : " + storename.C_location);
+                Console.ReadLine();
+            }
 
         }
         private static void StoreOrderHistory()
@@ -171,20 +177,19 @@ namespace ShoesStore
                 Console.Write("| Id:" + store.Id);
                 Console.Write(" Location:" + store.Location + "|\n");
             }
-            Console.Write("\n Enter Id of the Store You want order History \n");
+            Console.WriteLine("Enter Id of the Store You want order History");
             selection = int.Parse(Console.ReadLine());
            
             OrderRepo orderhistory = new OrderRepo();
             var allorders = orderhistory.GetAllOrders();
-            Console.WriteLine("\n-------------Order History----------------\n");
              foreach (var order in allorders)
              {
                  if (selection == order.StoreId)
                  {
-                    Console.Write("\n\n|  Date and Time of Order : " + order.OrderDate + "|");
-                    Console.Write(" Store id: " + order.StoreId + "|");
+                    Console.Write("\n|  Date and Time of Order : " + order.OrderDate + "|");
+                    Console.Write("Store id: " + order.StoreId + "|");
                     Console.Write(" Order id : " + order.OrderId + "|");
-                    Console.Write(" Total bill : " + order.TotalBill + "|\n\n");
+                    Console.Write(" Total bill : " + order.TotalBill + "|\n");
                 }
              }
             Console.ReadLine();
