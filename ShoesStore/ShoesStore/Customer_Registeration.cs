@@ -5,11 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using CustData;
 using LoginCredential;
+using InputValidation;
 
 namespace ShoesStore
 {
     public class Customer_Registeration
     {
+        InputValidation.Validation validate = new InputValidation.Validation();
         public  void AddCustomer()
         {
 
@@ -21,31 +23,43 @@ namespace ShoesStore
 
             Console.Write("\n Customer Name: ");
             customer.C_name = Console.ReadLine();
+            customer.C_name = validate.CheckName(customer.C_name);
 
             Console.Write("\n Customer Email: ");
             customer.C_Email = Console.ReadLine();
+            customer.C_Email = validate.checkEmail(customer.C_Email);
 
             Console.Write("\n Customer Contact number: ");
             customer.C_contact = Console.ReadLine();
+            customer.C_contact = validate.checkmobnumber(customer.C_name);
 
             Console.Write("\n Customer Location: ");
             customer.C_location = Console.ReadLine();
-            
+            customer.C_location = validate.CheckName(customer.C_location);
+
             Console.WriteLine("\n-----------------------------------------\n");
             Console.Write("\n Create User Name: ");
             cus_credential.C_UserName = Console.ReadLine();
+            cus_credential.C_UserName = validate.CheckName(cus_credential.C_UserName);
         pass:
             Console.Write("\n Create Password: ");
             string pass1 = Console.ReadLine();
+            pass1 = validate.CheckName(pass1);
             Console.Write("\n Confirm Password: ");
             string pass2 = Console.ReadLine();
-            if(pass1==pass2)
+            pass2 = validate.CheckName(pass2);
+            if (pass1==pass2)
             {
+               
                 cus_credential.C_Password = pass1;
+                Console.WriteLine("\n------- You have successfully registered--------\n");
+                Console.ReadLine();
+
             }
             else
             {
                 Console.WriteLine("\n------- Your password doesn't match--------\n");
+
                 goto pass;
             }
         
