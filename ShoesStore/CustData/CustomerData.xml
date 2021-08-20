@@ -22,6 +22,14 @@
     <C_location>Mumbai</C_location>
   </Customer>
   <Customer>
+    <C_Id>91505</C_Id>
+    <C_name>Vivek Maurya</C_name>
+    <C_Email>mauryav87@gmail.com</C_Email>
+    <C_contact>7754951743</C_contact>
+    <C_location>Jogeshwari</C_location>
+  </Customer>
+</ArrayOfCustomer>
+  <Customer>
     <C_Id>98388</C_Id>
     <C_name>Nikita Bhoir</C_name>
     <C_Email>Nik@gmail.com</C_Email>
