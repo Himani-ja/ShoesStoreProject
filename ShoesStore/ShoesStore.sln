@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoginCredential", "LoginCre
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OrderData", "OrderData\OrderData.csproj", "{8D9DF4D6-0032-4142-ACE1-607B966FE3CC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputValidation", "InputValidation\InputValidation.csproj", "{A0421240-27FB-42F3-ADB3-640DAC02784A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InputValidation", "InputValidation\InputValidation.csproj", "{A0421240-27FB-42F3-ADB3-640DAC02784A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoesProjectTest", "ShoesProjectTest\ShoesProjectTest.csproj", "{4FCED87B-69E5-4097-B4E8-0B0357013562}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{A0421240-27FB-42F3-ADB3-640DAC02784A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0421240-27FB-42F3-ADB3-640DAC02784A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0421240-27FB-42F3-ADB3-640DAC02784A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FCED87B-69E5-4097-B4E8-0B0357013562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FCED87B-69E5-4097-B4E8-0B0357013562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FCED87B-69E5-4097-B4E8-0B0357013562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FCED87B-69E5-4097-B4E8-0B0357013562}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

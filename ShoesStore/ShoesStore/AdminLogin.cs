@@ -124,7 +124,8 @@ namespace ShoesStore
 
             var addshoes = repo.Init(storeid.Id,shoes1.Id, (ShoesData.Category)shoes1.Category, shoes1.Size, shoes1.Price, (ShoesData.Colors)shoes1.Color, (ShoesData.Types)shoes1.Type, (ShoesData.Lace)shoes1.Lace, shoes1.Brand, shoes1.Quantity);
             repo.Addshoes(addshoes);
-
+            Console.WriteLine("---Shoes has been added---");
+            Console.ReadLine();
         }
         private void AddStore()
         {
@@ -140,6 +141,8 @@ namespace ShoesStore
             StoreData.FileRepoStore Repo2 = new StoreData.FileRepoStore();
             var addStore = Repo2.Init(store1.Id, store1.Location);
             Repo2.Addstore(addStore);
+            Console.WriteLine("---Store has been added---");
+            Console.ReadLine();
         }
 
         private void SearchCustomer()

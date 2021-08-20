@@ -12,7 +12,7 @@ namespace InputValidation
         {
             while (string.IsNullOrEmpty(name))
             {
-                Console.WriteLine("Please enter valid input...");
+                Console.WriteLine(" Please enter valid input");
                 name = Console.ReadLine();
 
             }
@@ -44,7 +44,7 @@ namespace InputValidation
 
             while (!mobPattern.IsMatch(phoneNumber))
             {
-                Console.WriteLine(" Please enter valid phone number..");
+                Console.WriteLine(" Please enter valid phone number");
                 phoneNumber = Console.ReadLine();
 
             }
@@ -71,7 +71,7 @@ namespace InputValidation
             CustRepo display = new CustRepo();
             if (display.GetCustomer(s_name) == null)
             {
-                Console.WriteLine($"Sorry... there is no customer present with {s_name} name");
+                Console.WriteLine($" Sorry... there is no customer present with {s_name} name");
                 Console.ReadLine();
             }
 

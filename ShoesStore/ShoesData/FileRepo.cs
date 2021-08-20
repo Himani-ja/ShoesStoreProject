@@ -68,7 +68,7 @@ namespace ShoesData
                 doc.Save(path);
             }
 
-            System.Console.WriteLine("All cats has bee stored in the XML file at {0}", path);
+            System.Console.WriteLine("Shoes has been stored in the XML file");
             Console.ReadLine();
         }
 

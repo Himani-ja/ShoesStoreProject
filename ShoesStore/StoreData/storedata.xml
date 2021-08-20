@@ -12,4 +12,8 @@
     <Id>26727</Id>
     <Location>Dadar</Location>
   </Store>
+  <Store>
+    <Id>59397</Id>
+    <Location>Mahalaxmi</Location>
+  </Store>
 </ArrayOfStore>

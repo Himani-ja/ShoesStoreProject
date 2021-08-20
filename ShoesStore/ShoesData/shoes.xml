@@ -24,30 +24,76 @@
     <Brand>Nike</Brand>
     <Quantity>100</Quantity>
   </shoes>
-
   <shoes>
-    <StoreId>87757</StoreId>
-    <Id>55646</Id>
-    <Category>Sports</Category>
-    <Size>7.5</Size>
-    <Price>1600</Price>
+    <StoreId>39868</StoreId>
+    <Id>87979</Id>
+    <Category>Loafer</Category>
+    <Size>7.9</Size>
+    <Price>1227</Price>
+    <Color>Black</Color>
+    <Type>Male</Type>
+    <Lace>No</Lace>
+    <Brand>Bata</Brand>
+    <Quantity>200</Quantity>
+  </shoes>
+  <shoes>
+    <StoreId>59397</StoreId>
+    <Id>81946</Id>
+    <Category>Boots</Category>
+    <Size>9.8</Size>
+    <Price>700</Price>
     <Color>Brown</Color>
     <Type>Female</Type>
     <Lace>Yes</Lace>
-    <Brand>Nike</Brand>
-    <Quantity>34</Quantity>
+    <Brand>Bata</Brand>
+    <Quantity>100</Quantity>
   </shoes>
   <shoes>
-    <StoreId>39868</StoreId>
-    <Id>35999</Id>
-    <Category>Sports</Category>
-    <Size>7.5</Size>
-    <Price>900</Price>
-    <Color>Blue</Color>
+    <StoreId>59397</StoreId>
+    <Id>23147</Id>
+    <Category>Sneakers</Category>
+    <Size>8.4</Size>
+    <Price>2000</Price>
+    <Color>White</Color>
     <Type>Male</Type>
     <Lace>No</Lace>
-    <Brand>Nike</Brand>
-    <Quantity>99</Quantity>
+    <Brand>Skechers</Brand>
+    <Quantity>100</Quantity>
   </shoes>
-
+  <shoes>
+    <StoreId>53970</StoreId>
+    <Id>40328</Id>
+    <Category>Casual_Wear</Category>
+    <Size>5.7</Size>
+    <Price>670</Price>
+    <Color>Red</Color>
+    <Type>Male</Type>
+    <Lace>No</Lace>
+    <Brand>Clarks</Brand>
+    <Quantity>100</Quantity>
+  </shoes>
+  <shoes>
+    <StoreId>53970</StoreId>
+    <Id>82646</Id>
+    <Category>Sports</Category>
+    <Size>8.5</Size>
+    <Price>860</Price>
+    <Color>Grey</Color>
+    <Type>Female</Type>
+    <Lace>Yes</Lace>
+    <Brand>Adidas</Brand>
+    <Quantity>100</Quantity>
+  </shoes>
+  <shoes>
+    <StoreId>26727</StoreId>
+    <Id>66801</Id>
+    <Category>Boots</Category>
+    <Size>5.7</Size>
+    <Price>2000</Price>
+    <Color>White</Color>
+    <Type>Female</Type>
+    <Lace>No</Lace>
+    <Brand>Gucci</Brand>
+    <Quantity>100</Quantity>
+  </shoes>
 </ArrayOfShoes>

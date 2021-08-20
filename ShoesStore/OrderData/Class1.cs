@@ -10,9 +10,7 @@ using System.Linq;
 namespace OrderData
 {
     public class Order
-    {
-        public object ViewState { get; private set; }
-
+    { 
         public void StoreSelection(int u_id)
         {
             int shoeselection;
@@ -46,10 +44,7 @@ namespace OrderData
                 {
                     if (selection == shoes.StoreId)
                     {
-
-
-                        Console.Write("\n| Store id:" + shoes.StoreId + " |");
-                        Console.Write(" Id:" + shoes.Id + " |");
+                        Console.Write("\n| Id:" + shoes.Id + " |");
                         Console.Write(" Category:" + shoes.Category + " |");
                         Console.Write(" Brand:" + shoes.Brand + " |");
                         Console.Write(" Type:" + shoes.Type + " |");
