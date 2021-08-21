@@ -10,7 +10,7 @@
     <Type>Male</Type>
     <Lace>Yes</Lace>
     <Brand>Puma</Brand>
-    <Quantity>87</Quantity>
+    <Quantity>100</Quantity>
   </shoes>
   <shoes>
     <StoreId>26727</StoreId>
@@ -22,7 +22,7 @@
     <Type>Female</Type>
     <Lace>Yes</Lace>
     <Brand>Nike</Brand>
-    <Quantity>100</Quantity>
+    <Quantity>72</Quantity>
   </shoes>
   <shoes>
     <StoreId>39868</StoreId>
@@ -34,7 +34,7 @@
     <Type>Male</Type>
     <Lace>No</Lace>
     <Brand>Bata</Brand>
-    <Quantity>200</Quantity>
+    <Quantity>50</Quantity>
   </shoes>
   <shoes>
     <StoreId>59397</StoreId>
@@ -94,6 +94,6 @@
     <Type>Female</Type>
     <Lace>No</Lace>
     <Brand>Gucci</Brand>
-    <Quantity>100</Quantity>
+    <Quantity>90</Quantity>
   </shoes>
 </ArrayOfShoes>
