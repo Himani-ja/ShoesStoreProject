@@ -6,8 +6,6 @@ using System.Data;
 using System.Xml.Linq;
 using System.Linq;
 
-using System.Xml.Linq;
-using System.Linq;
 
 namespace OrderData
 {
@@ -15,7 +13,7 @@ namespace OrderData
     { 
         public void StoreSelection(int u_id)
         {
-            int shoeselection;
+            int shoeselection,buyquantity;
             
             double cost=0;
             int selection;
@@ -24,8 +22,7 @@ namespace OrderData
             var allstores = Store.GetAllStores();
             Console.WriteLine("\n-----------------Order Page-----------------\n");
             foreach (var store in allstores)
-            {
-                
+            { 
                 Console.Write("|     Id:" + store.Id);
                 Console.Write(" Location:" + store.Location + "    |\n");
             }
@@ -60,14 +57,26 @@ namespace OrderData
                 }
                 Console.Write("\n Select Shoe Id to buy ");
                 shoeselection = int.Parse(Console.ReadLine());
+            enterquantity:
+                Console.Write("\n Enter Quantity ");
+                buyquantity = int.Parse(Console.ReadLine());
                 
-                foreach (var shoes in allshoes)
+            foreach (var shoes in allshoes)
                 {
-                string id = Convert.ToString(shoes.Id);
+                
+                 string id = Convert.ToString(shoes.Id);
                     if (shoes.Id == shoeselection)
                     {
-                        QuantityUpdate(id);                
-                        cost = cost + shoes.Price;
+                    if (shoes.Quantity < buyquantity)
+                    {
+                        Console.WriteLine("Sorry we don't have enough quantity");
+                        goto enterquantity;
+                    }
+                    else
+                    {
+                        QuantityUpdate(id, buyquantity);
+                        cost = cost+(shoes.Price * buyquantity);
+                    }
                     }
 
                 }
@@ -127,7 +136,7 @@ namespace OrderData
 
         }
 
-        public static void QuantityUpdate(string id)
+        public static void QuantityUpdate(string id,int buyquantity)
         {
             XDocument xdoc = XDocument.Load(@"..\..\..\..\ShoesData\shoes.xml");
 
@@ -135,7 +144,7 @@ namespace OrderData
             if (emp != null)
             {
                 int quantity = Convert.ToInt32(emp.Element("Quantity").Value);
-                quantity = quantity - 1;
+                quantity = quantity - buyquantity;
                 emp.Element("Quantity").Value = Convert.ToString(quantity);
                 //xdoc.Root.Add(emp);
                 xdoc.Save(@"..\..\..\..\ShoesData\shoes.xml");
