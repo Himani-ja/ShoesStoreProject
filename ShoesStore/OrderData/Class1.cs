@@ -5,7 +5,7 @@ using ShoesLibrary;
 using System.Data;
 using System.Xml.Linq;
 using System.Linq;
-
+using System.Collections.Generic;
 
 namespace OrderData
 {
@@ -13,8 +13,12 @@ namespace OrderData
     { 
         public void StoreSelection(int u_id)
         {
-            int shoeselection,buyquantity;
-            
+            int shoeselection;
+            int buyquantity;
+            int i = 0;
+            int j = 0;
+            Dictionary<string, string> shoeIdAndQuantity = new Dictionary<string, string>();
+            double[] price = new double[200];
             double cost=0;
             int selection;
             FileRepoStore Store = new FileRepoStore();
@@ -60,7 +64,7 @@ namespace OrderData
             enterquantity:
                 Console.Write("\n Enter Quantity ");
                 buyquantity = int.Parse(Console.ReadLine());
-                
+            
             foreach (var shoes in allshoes)
                 {
                 
@@ -74,8 +78,12 @@ namespace OrderData
                     }
                     else
                     {
+                        shoeIdAndQuantity.Add(Convert.ToString(shoes.Id), Convert.ToString(buyquantity));
+                        price[i] = shoes.Price;
+                        i++;
                         QuantityUpdate(id, buyquantity);
                         cost = cost+(shoes.Price * buyquantity);
+                       
                     }
                     }
 
@@ -97,9 +105,22 @@ namespace OrderData
                     goto menu;
                   
                 }
-            Console.Write("\n-----Thanks for shopping with us-----\n Your Total bill is:" + cost+"\n");
-
             
+           
+            
+            Console.WriteLine("Your orders are");
+            Console.WriteLine("Id" + "        Quantity" +"       Price per shoes");
+           
+            foreach (KeyValuePair<string, string> ord in shoeIdAndQuantity)
+            {
+                Console.WriteLine("{0}           {1}        {2}",
+                ord.Key, ord.Value,price[j]);
+                j++;
+            }
+
+            Console.WriteLine("---------------------------------");
+            Console.Write("Your Total bill is:" + cost + "\n");
+            Console.Write("Thanks for shopping with us.......\n");
             OrderRepo order = new OrderRepo();
 
             DateTime orderdate = DateTime.Now;
@@ -136,7 +157,7 @@ namespace OrderData
 
         }
 
-        public static void QuantityUpdate(string id,int buyquantity)
+        public static void QuantityUpdate(string id, int buyquantity)
         {
             XDocument xdoc = XDocument.Load(@"..\..\..\..\ShoesData\shoes.xml");
 

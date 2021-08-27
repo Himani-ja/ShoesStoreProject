@@ -107,7 +107,6 @@ namespace ShoesData
         {
             var shoes = GetAllShoes();
             var shoe = shoes.Where<shoes>(x => x.Id == id).FirstOrDefault();
-
             return shoe;
         }
     }
