@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace OrderData
 {
-    public class Order
+    public class Orderclass
     { 
         public void StoreSelection(int u_id)
         {
@@ -20,7 +20,6 @@ namespace OrderData
             Dictionary<string, string> shoeIdAndQuantity = new Dictionary<string, string>();
             double[] price = new double[200];
             double cost=0;
-            int selection;
             FileRepoStore Store = new FileRepoStore();
             Orders Orderobj = new Orders();
             var allstores = Store.GetAllStores();
@@ -31,7 +30,7 @@ namespace OrderData
                 Console.Write(" Location:" + store.Location + "    |\n");
             }
             Console.Write("\n Select Store Id, You want to buy from ");
-            selection = int.Parse(Console.ReadLine());
+            int selection = int.Parse(Console.ReadLine());
             foreach (var store in allstores)
             {
                 if (selection == store.Id)
@@ -135,6 +134,7 @@ namespace OrderData
             order.AddOrders(addorder);
 
             Console.ReadLine();
+            
         }
         public void OrderHistory(int u_id)
         {
@@ -145,7 +145,6 @@ namespace OrderData
             {
                 if (u_id == order.Customer_Id)
                 {
-
                     Console.Write("\n|  Date and Time of Order : " + order.OrderDate + " |");
                     Console.Write(" Store id: " + order.StoreId + " |");
                     Console.Write(" Order id: " + order.OrderId + " |");
@@ -169,7 +168,10 @@ namespace OrderData
                 emp.Element("Quantity").Value = Convert.ToString(quantity);
                 //xdoc.Root.Add(emp);
                 xdoc.Save(@"..\..\..\..\ShoesData\shoes.xml");
+                return true;
             }
+            else
+                return false;
         }
     }
 }

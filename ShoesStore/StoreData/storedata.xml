@@ -16,4 +16,40 @@
     <Id>59397</Id>
     <Location>Mahalaxmi</Location>
   </Store>
+  <Store>
+    <Id>95138</Id>
+    <Location>Bandra</Location>
+  </Store>
+  <Store>
+    <Id>86835</Id>
+    <Location>Andheri</Location>
+  </Store>
+  <Store>
+    <Id>66333</Id>
+    <Location>Dharavi</Location>
+  </Store>
+  <Store>
+    <Id>87070</Id>
+    <Location>Dharavi</Location>
+  </Store>
+  <Store>
+    <Id>38578</Id>
+    <Location>Dharavi</Location>
+  </Store>
+  <Store>
+    <Id>46343</Id>
+    <Location>Dharavi</Location>
+  </Store>
+  <Store>
+    <Id>55192</Id>
+    <Location>Dharavi</Location>
+  </Store>
+  <Store>
+    <Id>72497</Id>
+    <Location>Dharavi</Location>
+  </Store>
+  <Store>
+    <Id>25971</Id>
+    <Location>Dharavi</Location>
+  </Store>
 </ArrayOfStore>

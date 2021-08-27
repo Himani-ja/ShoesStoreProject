@@ -66,7 +66,7 @@ namespace StoreData
                 doc.Save(path1);
             }
 
-            System.Console.WriteLine("All stores has been stored in the XML file at {0}", path1);
+            System.Console.WriteLine("All stores has been stored in the XML file ");
         }
 
         public IEnumerable<Store> GetAllStores(string _path = @"..\..\..\..\StoreData\storedata.xml")
@@ -79,15 +79,15 @@ namespace StoreData
                 deserializer = new XmlSerializer(typeof(List<Store>));
                 allstore = (List<Store>)deserializer.Deserialize(reader);
             }
-            catch (DirectoryNotFoundException ex)
+            catch (DirectoryNotFoundException)
             {
-                System.Console.WriteLine("Invalid path to the file");
+               Console.WriteLine("Invalid path to the file");
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
-                System.Console.WriteLine("Invalid path to the file");
+                Console.WriteLine("Invalid path to the file");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("Exception");
             }

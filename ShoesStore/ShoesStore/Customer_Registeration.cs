@@ -11,7 +11,7 @@ namespace ShoesStore
 {
     public class Customer_Registeration
     {
-        InputValidation.Validation validate = new InputValidation.Validation();
+        Validation validate = new Validation();
         public  void AddCustomer()
         {
 

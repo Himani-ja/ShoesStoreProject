@@ -61,6 +61,10 @@ namespace ShoesStore
                         Console.Clear();
                         Console.ReadLine();
                         break;
+                    default:
+                        Console.WriteLine("enter valid input");
+                        Console.ReadLine();
+                        break;
                 }
               
                 Console.Clear();
@@ -78,7 +82,7 @@ namespace ShoesStore
                 return ip;
                 // performSelectionAction(ip);
             }
-            static void ContinueOrExit()
+            static void ContinueOrExit() 
             {
                 Console.Write("Continue ? y/n : ");
                 var res = Console.ReadLine();

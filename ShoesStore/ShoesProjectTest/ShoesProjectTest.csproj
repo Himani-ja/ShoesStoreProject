@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OrderData\OrderData.csproj" />
+    <ProjectReference Include="..\ShoesStore\ShoesStore.csproj" />
+  </ItemGroup>
+
 </Project>

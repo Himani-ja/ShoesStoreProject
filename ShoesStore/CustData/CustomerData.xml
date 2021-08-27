@@ -43,4 +43,25 @@
     <C_contact>9876543298</C_contact>
     <C_location>Parel</C_location>
   </Customer>
+  <Customer>
+    <C_Id>76152</C_Id>
+    <C_name>Tom</C_name>
+    <C_Email>tom@gmail.com</C_Email>
+    <C_contact>9854678930</C_contact>
+    <C_location>dadar</C_location>
+  </Customer>
+  <Customer>
+    <C_Id>89597</C_Id>
+    <C_name>Uma</C_name>
+    <C_Email>uma@gmail.com</C_Email>
+    <C_contact>9874536123</C_contact>
+    <C_location>dadar</C_location>
+  </Customer>
+  <Customer>
+    <C_Id>48385</C_Id>
+    <C_name>Sam</C_name>
+    <C_Email>sam@gmail.com</C_Email>
+    <C_contact>9876543210</C_contact>
+    <C_location>mumbai</C_location>
+  </Customer>
 </ArrayOfCustomer>

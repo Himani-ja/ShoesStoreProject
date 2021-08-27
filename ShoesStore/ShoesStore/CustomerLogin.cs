@@ -11,17 +11,19 @@ namespace ShoesStore
 {
     public class CustomerLogin
     {
-        InputValidation.Validation validatechoice = new InputValidation.Validation();
+        Validation validatechoice = new Validation();
         public void Login(string username, string password)
         {
-            Order Cart = new Order();
-
+            Orderclass Cart = new Orderclass();
+            Program program = new Program();
             CustomerLoginRepo loginobj = new CustomerLoginRepo();
             var username1 = loginobj.GetCustomerlogin(username);
             if (username1 == null)
             {
-                validatechoice.searchusername(username);
+                validatechoice.username(username);
                 Console.ReadLine();
+                program.Home();
+
             }
             else
             {
@@ -35,13 +37,12 @@ namespace ShoesStore
                     {
                         case 1:
                             Cart.StoreSelection(user_id);
-
                             break;
                         case 2:
                             Cart.OrderHistory(user_id);
                             break;
                         case 3:
-                            Console.Clear();
+                            //Console.Clear();
                             Console.ReadLine();
                             break;
                     }
@@ -49,16 +50,16 @@ namespace ShoesStore
                 }
                 else
                 {
-                    Console.WriteLine(" Wrong Credentials");
+                    Console.WriteLine(" Wrong Password");
                     Console.ReadLine();
-                    Program program = new Program();
+                   
                     program.Home();
 
                 }
 
             }
 
-             static int menu1()
+               static int menu1()
             {
                 Console.Clear();
                 Console.WriteLine("\n--------------------Customer Module----------------------\n");
@@ -70,4 +71,4 @@ namespace ShoesStore
             }
 
         }
-    } }
+ }   }

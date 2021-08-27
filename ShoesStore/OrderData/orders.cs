@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderData
 {
+
     public class orders
     {
         public int StoreId { get; set; }

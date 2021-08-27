@@ -14,38 +14,46 @@ namespace ShoesStore
 {
     public class AdminLogin
     {
-        InputValidation.Validation validate = new InputValidation.Validation();
+        Validation validate = new Validation();
         public void Login(string username, string password)
         {
             Console.WriteLine("\n-------------Admin Module-----------------\n");
             if (username == "admin" && password == "admin")
             {
-                
                  int action = menu1();
               
                 while (action !=0)
                 {
                     switch (action)
                     {
-                        case 1:
-                            AddShoes();
-                            break;
-                        case 2:
-                            AddStore();
-                            break;
-                        case 3:
-                            SearchCustomer();
-                            break;
-                        case 4:
-                            StoreOrderHistory();
-                            break;
+                            case 1:
+                                AddShoes();
+                                break;
+                            case 2:
+                                Console.Write("\n Store Location: ");
+                                string Location = Console.ReadLine();
+
+                                bool loc = AddStore(Location);
+                                //Console.WriteLine("testing"+loc);
+                                Console.ReadLine();
+                                break;
+                            case 3:
+                                Console.WriteLine("\n--Search Customer by Name --\n");
+                                Console.Write("Enter Customer Name :");
+                                string name = Console.ReadLine();
+                                //string name1= 
+                                SearchCustomer(name);
+                                break;
+                            case 4:
+                                StoreOrderHistory();
+                                break;
                     }
-                    action = menu1();
-                   
+                        action = menu1();
                 }
             }
             else
-            {Console.WriteLine("\n--------Wrong Credentials--------\n");
+            {
+                Console.WriteLine("\n--------Wrong Credentials--------\n");
                 Console.ReadLine();
             }
         }
@@ -54,7 +62,7 @@ namespace ShoesStore
             Console.Clear();
             Console.WriteLine("\n <1> Add Shoes Details \n <2> Add Store Information \n <3> Search Customer by name \n <4> All Order History of Store.\n <0> Exit");
             Console.Write("\n Choose the above option: ");
-            int ip = Int32.Parse(Console.ReadLine());
+                int ip = Int32.Parse(Console.ReadLine());
             return ip;
             // performSelectionAction(ip);
         }
@@ -89,7 +97,7 @@ namespace ShoesStore
             }
                      
             int id=0;
-            Console.WriteLine("Enter Store Id : ");
+            Console.Write("\n Enter Store Id: ");
             id =int.Parse(Console.ReadLine());
             var storeid=display.GetStore(id);
 
@@ -124,51 +132,59 @@ namespace ShoesStore
 
             var addshoes = repo.Init(storeid.Id,shoes1.Id, (ShoesData.Category)shoes1.Category, shoes1.Size, shoes1.Price, (ShoesData.Colors)shoes1.Color, (ShoesData.Types)shoes1.Type, (ShoesData.Lace)shoes1.Lace, shoes1.Brand, shoes1.Quantity);
             repo.Addshoes(addshoes);
-            Console.WriteLine("---Shoes has been added---");
+            
             Console.ReadLine();
         }
-        private void AddStore()
+        public bool AddStore(string location)
         {
-            StoreData.Store store1 = new StoreData.Store();
+            Store store1 = new Store();
 
             Random uniqueid = new Random();
             int randomnum = uniqueid.Next(10001, 100000);
             store1.Id = randomnum;
 
-            Console.Write("\n Store Location: ");
-            store1.Location = Console.ReadLine();
+            //Console.Write("\n Store Location: ");
+            store1.Location = location;
             store1.Location = validate.CheckName(store1.Location);
-            StoreData.FileRepoStore Repo2 = new StoreData.FileRepoStore();
+            
+            FileRepoStore Repo2 = new FileRepoStore();
             var addStore = Repo2.Init(store1.Id, store1.Location);
             Repo2.Addstore(addStore);
             Console.WriteLine("---Store has been added---");
-            Console.ReadLine();
+            //Console.ReadLine();
+            return true;
         }
 
-        private void SearchCustomer()
+        public bool SearchCustomer(string name)
         {
-            Console.WriteLine("\n--Search Customer by Name --\n");
+            
             CustRepo display = new CustRepo();
-            string name;
-            Console.Write("Enter Customer Name :");
-            name = Console.ReadLine();
+            //string name;
+            //Console.Write("Enter Customer Name :");
+            //name = Console.ReadLine();
             name = validate.CheckName(name);
 
-            var storename = display.GetCustomer(name);
-            if (storename == null)
+            var customername = display.GetCustomer(name);
+
+            
+            if (customername==null )
             {
                 validate.SearchName(name);
-               // Console.ReadLine();
+                Console.ReadLine();
+                return false;
+
             }
+            
             else
             {
-                Console.WriteLine("Id : " + storename.C_Id);
-                Console.WriteLine("Name :" + storename.C_name);
-                Console.WriteLine("Email :" + storename.C_Email);
-                Console.WriteLine("Location : " + storename.C_location);
+                Console.WriteLine("Id : " + customername.C_Id);
+                Console.WriteLine("Name :" + customername.C_name);
+                Console.WriteLine("Email :" + customername.C_Email);
+                Console.WriteLine("Location : " + customername.C_location);
                 Console.ReadLine();
+                return true;
             }
-
+            
         }
         private static void StoreOrderHistory()
         {
@@ -189,13 +205,12 @@ namespace ShoesStore
              {
                  if (selection == order.StoreId)
                  {
-
                     Console.Write("\n\n|  Date and Time of Order : " + order.OrderDate + "|");
                     Console.Write(" Customer id: " + order.Customer_Id + "|");
                     Console.Write("Store id: " + order.StoreId + "|");
                     Console.Write(" Order id : " + order.OrderId + "|");
                     Console.Write(" Total bill : " + order.TotalBill + "|\n");
-                }
+                 }
              }
             Console.ReadLine();
 

@@ -11,6 +11,7 @@ namespace InputValidation
         public string CheckName(string name)   // to check name (if name is empty it will return 0 value,otherwise it will return name)
         {
             while (string.IsNullOrEmpty(name))
+
             {
                 Console.WriteLine(" Please enter valid input");
                 name = Console.ReadLine();
@@ -19,38 +20,30 @@ namespace InputValidation
             return name;
         }
 
-        public global::LoginCredential.CustomerCredential CheckName(global::LoginCredential.CustomerCredential username1)
+        public CustomerCredential CheckName(CustomerCredential username1)
         {
             throw new NotImplementedException();
         }
 
-        /* public int CheckNumber(int numInput)
-         { 
-             bool parseSuccess = int.TryParse(ageAsString, out age);
-
-
-             while (numInput==null)
-             {
-                 Console.WriteLine("Please enter valid choice...");
-                 numInput = int.Parse(Console.ReadLine());
-
-             }
-             return numInput;
-         }
-        */
         public string checkmobnumber(string phoneNumber)  // to check valid mobile number
         {
-            Regex mobPattern = new Regex(@"^[0-9]{10}$"); //mobile number should match this pattern(eg.5543454324)
-
+            /*Regex mobPattern = new Regex(@"^\d{10}$"); //mobile number should match this pattern(eg.5543454324)
             while (!mobPattern.IsMatch(phoneNumber))
-            {
+            {  
                 Console.WriteLine(" Please enter valid phone number");
                 phoneNumber = Console.ReadLine();
-
+            }  
+            return phoneNumber;*/
+            if ((phoneNumber.Length != 10) || (phoneNumber == null))
+            {
+                Console.WriteLine("Please enter your 10 digit mobile number!");
+                phoneNumber = Console.ReadLine();
+                checkmobnumber(phoneNumber);
             }
-            return phoneNumber;
-        }
 
+            return phoneNumber;
+        
+        }
 
         public string checkEmail(string email)  // to check valid mobile number
         {
@@ -72,7 +65,7 @@ namespace InputValidation
             if (display.GetCustomer(s_name) == null)
             {
                 Console.WriteLine($" Sorry... there is no customer present with {s_name} name");
-                Console.ReadLine();
+                //Console.ReadLine();
             }
 
         }
@@ -86,6 +79,16 @@ namespace InputValidation
                 Console.ReadLine();
             }
 
+        }
+        public void username(string username)
+        {
+            CustomerLoginRepo loginobj = new CustomerLoginRepo();
+
+            if (loginobj.GetCustomerlogin(username) == null)
+            {
+                Console.WriteLine(" Invalid username");
+                
+            }
         }
     }
 }

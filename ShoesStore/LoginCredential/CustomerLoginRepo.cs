@@ -82,17 +82,17 @@ namespace LoginCredential
                 deserializer = new XmlSerializer(typeof(List<CustomerCredential>));
                 allloginCredential = (List<CustomerCredential>)deserializer.Deserialize(reader);
             }
-            catch (DirectoryNotFoundException ex)
+            catch (DirectoryNotFoundException)
             {
                 System.Console.WriteLine("Invalid path to the file");
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
                 System.Console.WriteLine("Invalid path to the file");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                Console.WriteLine("Exception"+ex);
+                Console.WriteLine("Exception");
             }
             if (allloginCredential != null)
             {
@@ -101,7 +101,7 @@ namespace LoginCredential
             }
             else
                   throw new System.NullReferenceException();
-            return null;
+                  return null;
         }
        
 

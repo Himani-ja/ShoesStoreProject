@@ -78,15 +78,15 @@ namespace CustData
                 deserializer = new XmlSerializer(typeof(List<Customer>));
                 allcustomer = (List<Customer>)deserializer.Deserialize(reader);
             }
-            catch (DirectoryNotFoundException ex)
+            catch (DirectoryNotFoundException)
             {
                 System.Console.WriteLine("Invalid path to the file");
             }
-            catch (FileNotFoundException ex)
+            catch (FileNotFoundException)
             {
                 System.Console.WriteLine("Invalid path to the file");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("Exception");
             }
@@ -102,9 +102,9 @@ namespace CustData
         public Customer GetCustomer(string name)
         {
             var customers = GetAllCustomer();
-            var customer = customers.Where<Customer>(x => x.C_name == name).FirstOrDefault();
-
-            return customer;
+            var customer = customers.Where<Customer>(x => x.C_name == name).FirstOrDefault();           
+                return customer;
+            
         }
 
         //customer login password
