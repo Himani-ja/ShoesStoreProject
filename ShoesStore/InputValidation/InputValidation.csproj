@@ -6,7 +6,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CustData\CustData.csproj" />
-    <ProjectReference Include="..\LoginCredential\LoginCredential.csproj" />
+    <ProjectReference Include="..\LoginCredential\Users.csproj" />
+    <ProjectReference Include="..\Users\Users.csproj" />
   </ItemGroup>
 
 </Project>

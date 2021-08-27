@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using LoginCredential;
+using Users;
 using ShoesLibrary;
-using ShoesData;
+using ProductData;
 using CustData;
 using StoreData;
 using OrderData;
@@ -17,7 +17,7 @@ namespace ShoesStore
             Orderclass Cart = new Orderclass();
             Program program = new Program();
             CustomerLoginRepo loginobj = new CustomerLoginRepo();
-            var username1 = loginobj.GetCustomerlogin(username);
+            var username1 = loginobj.GetUserlogin(username);
             if (username1 == null)
             {
                 validatechoice.username(username);
@@ -27,19 +27,19 @@ namespace ShoesStore
             }
             else
             {
-                int user_id = username1.Customer_ID;
-                string user_name = Convert.ToString(username1.C_UserName);
-                string user_pass = Convert.ToString(username1.C_Password);
+                int user_id = username1.User_ID;
+                string user_name = Convert.ToString(username1.UserName);
+                string user_pass = Convert.ToString(username1.Password);
                 if (user_name == username && user_pass == password)
                 {
                     int action = menu1();
                     switch (action)
                     {
                         case 1:
-                            Cart.StoreSelection(user_id);
+                           // Cart.StoreSelection(user_id);
                             break;
                         case 2:
-                            Cart.OrderHistory(user_id);
+                            //Cart.OrderHistory(user_id);
                             break;
                         case 3:
                             //Console.Clear();

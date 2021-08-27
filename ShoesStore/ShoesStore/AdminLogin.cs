@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ShoesLibrary;
-using ShoesData;
+using ProductData;
 using CustData;
 using StoreData;
 using OrderData;
@@ -85,7 +85,28 @@ namespace ShoesStore
         }*/
         private void AddShoes()
         {
-            FileRepoStore display = new FileRepoStore();
+
+            ProductRepo prorepo = new ProductRepo();
+            var allcat = prorepo.GetAllCategory();
+            foreach (var cat in allcat)
+            {
+
+                Console.Write("\n | Id:" + cat.Category_Id + " |");
+                Console.Write(" Name:" + cat.Category_Name + "|\n");
+
+            }
+
+            var allbrand = prorepo.GetAllBrand();
+            foreach (var brand in allbrand)
+            {
+
+                Console.Write("\n | Id:" + brand.Brand_Id + " |");
+                Console.Write(" Name:" + brand.Brand_Name + "|\n");
+
+            }
+
+
+            /*FileRepoStore display = new FileRepoStore();
             var allstores = display.GetAllStores();
             Console.WriteLine(" Choose Store: ");
             foreach (var store in allstores)
@@ -101,38 +122,39 @@ namespace ShoesStore
             id =int.Parse(Console.ReadLine());
             var storeid=display.GetStore(id);
 
-            ShoesLibrary.shoes shoes1 = new ShoesLibrary.shoes();
+            Product product = new Product();
           
             Random uniqueid = new Random();
             int randomnum = uniqueid.Next(10001, 100000);
-            shoes1.Id = randomnum;
-            Console.Write(" Please enter shoes Category -\n <1> for Casual_Wear \n <2> for Sports \n <3> for Loafer \n <4> for Boots \n <5> for Sneakers:");
-            Console.Write("\n Choose the above Shoes Category: ");
-            shoes1.Category = (ShoesLibrary.Category)int.Parse(Console.ReadLine());
+            product.Product_Id = randomnum;*/
+            //Console.Write(" Please enter shoes Category -\n <1> for Casual_Wear \n <2> for Sports \n <3> for Loafer \n <4> for Boots \n <5> for Sneakers:");
+
+            /*Console.Write("\n Choose the above Shoes Category: ");
+            product.Category = (ShoesLibrary.Category)int.Parse(Console.ReadLine());
 
             Console.Write("\n Please enter shoes brand: ");
-            shoes1.Brand = Console.ReadLine();
-            shoes1.Brand = validate.CheckName(shoes1.Brand);
+            product.Brand = Console.ReadLine();
+            product.Brand = validate.CheckName(product.Brand);
             Console.Write("\n Please enter shoes Type - <0> for male and  <1> for female: ");
-            shoes1.Type = (ShoesLibrary.Types)int.Parse(Console.ReadLine());
+            product.Type = (ShoesLibrary.Types)int.Parse(Console.ReadLine());
             Console.Write("\n Please enter shoes has Lace - <0> for yes and <1> for no: ");
-            shoes1.Lace = (ShoesLibrary.Lace)int.Parse(Console.ReadLine());
+            product.Lace = (ShoesLibrary.Lace)int.Parse(Console.ReadLine());
             Console.Write("\n Please enter shoes Color-(Black,White,Blue,Red,Brown,Grey): ");
             string color = Console.ReadLine();
             color = validate.CheckName(color);
-            shoes1.Color = (ShoesLibrary.Colors)Enum.Parse(typeof(ShoesLibrary.Colors), color);
+            product.Color = (ShoesLibrary.Colors)Enum.Parse(typeof(ShoesLibrary.Colors), color);
             Console.Write("\n Please enter shoes size: ");
-            shoes1.Size = double.Parse(Console.ReadLine());
+            product.Size = double.Parse(Console.ReadLine());
             Console.Write("\n Please enter shoes price: $ ");
-            shoes1.Price = double.Parse(Console.ReadLine());
+            product.Price = double.Parse(Console.ReadLine());
             Console.Write("\n Please enter shoes quantity: ");
-            shoes1.Quantity = int.Parse(Console.ReadLine());
+            product.Quantity = int.Parse(Console.ReadLine());
 
-            FileRepo repo = new FileRepo();
+            ProductRepo repo = new ProductRepo();
 
-            var addshoes = repo.Init(storeid.Id,shoes1.Id, (ShoesData.Category)shoes1.Category, shoes1.Size, shoes1.Price, (ShoesData.Colors)shoes1.Color, (ShoesData.Types)shoes1.Type, (ShoesData.Lace)shoes1.Lace, shoes1.Brand, shoes1.Quantity);
-            repo.Addshoes(addshoes);
-            
+            var addshoes = repo.Init(storeid.Id,product.Id, (ShoesData.Category)product.Category, product.Size, product.Price, (ShoesData.Colors)product.Color, (ShoesData.Types)product.Type, (ShoesData.Lace)product.Lace, product.Brand, product.Quantity);
+            repo.Addshoes(addshoes);*/
+
             Console.ReadLine();
         }
         public bool AddStore(string location)
@@ -180,7 +202,7 @@ namespace ShoesStore
                 Console.WriteLine("Id : " + customername.C_Id);
                 Console.WriteLine("Name :" + customername.C_name);
                 Console.WriteLine("Email :" + customername.C_Email);
-                Console.WriteLine("Location : " + customername.C_location);
+                Console.WriteLine("Contact No :" + customername.C_contact);
                 Console.ReadLine();
                 return true;
             }

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfCategory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Category>
+		<Category_Id >1</Category_Id >
+		<Category_Name>Boots</Category_Name>
+		<CT_Active>1</CT_Active>
+	</Category>
+	<Category>
+		<Category_Id >2</Category_Id >
+		<Category_Name>Sports</Category_Name>
+		<CT_Active>1</CT_Active>
+	</Category>
+	<Category>
+		<Category_Id >3</Category_Id >
+		<Category_Name>Loafers</Category_Name>
+		<CT_Active>1</CT_Active>
+	</Category>
+	<Category>
+		<Category_Id >4</Category_Id >
+		<Category_Name>Sneakers</Category_Name>
+		<CT_Active>1</CT_Active>
+	</Category>
+
+</ArrayOfCategory>

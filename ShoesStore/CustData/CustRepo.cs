@@ -13,11 +13,11 @@ namespace CustData
     {
         static List<Customer> Custs = null;
         static string path = @"..\..\..\..\CustData\CustomerData.xml";
-        public List<Customer> Init(int Id,  string name,string email,string contact,string locat)
+        public List<Customer> Init(int C_Id,int U_Id , string name,string email,string contact,bool active)
         {
             //Console.WriteLine("hello");
             Custs = new List<Customer>(){
-                    new Customer(){ C_Id=Id, C_name=name,C_Email=email,C_contact=contact,C_location=locat},
+                    new Customer(){ C_Id=C_Id,User_Id=U_Id, C_name=name,C_Email=email,C_contact=contact,C_Active=active},
 
                 };
             return Custs;
@@ -66,7 +66,7 @@ namespace CustData
                 doc.Save(path);
             }
 
-            System.Console.WriteLine("All cats has bee stored in the XML file at {0}", path);
+              Console.WriteLine("All Customers has bee stored in the XML file at {0}", path);
         }
         public IEnumerable<Customer> GetAllCustomer(string _path = @"..\..\..\..\CustData\CustomerData.xml")
         {
@@ -96,7 +96,7 @@ namespace CustData
                     return allcustomer;
             }
             else
-                throw new System.NullReferenceException();
+                throw new NullReferenceException();
             return null;
         }
         public Customer GetCustomer(string name)
@@ -107,65 +107,6 @@ namespace CustData
             
         }
 
-        //customer login password
-
-       /* static List<CustomerCredential> credential = null;
-        public string path1 = @"..\..\..\..\CustData\CustomerCredentialData.xml";
-        public List<CustomerCredential> CredentialInit( int id,string username, string password )
-        {
-           
-            credential = new List<CustomerCredential>(){
-                    new CustomerCredential(){Customer_ID=id,C_UserName=username,C_Password=password},
-
-                };
-            return credential;
-        }
-        // login details store in xml
-        public void AddCustomerCredential(List<CustomerCredential> customerdetial)
-        {
-            /*StreamWriter writer = new StreamWriter(path);
-           // FileStream fs = File.Open("CustomerData.xml", FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Customer>));
-            serializer.Serialize(writer, Custs);
-
-            writer.Close();
-            System.Console.WriteLine("All Customer data has been stored in the XML file at {0}", path);*/
-
-
-            /*if (!File.Exists(path1))
-            {
-                XmlSerializer xSeriz = new XmlSerializer(typeof(List<CustomerCredential>));
-                FileStream fs = File.Open(path1, FileMode.Append, FileAccess.Write, FileShare.ReadWrite);
-                xSeriz.Serialize(fs, customerdetial);
-
-            }
-            else
-            {
-                XmlDocument doc = new XmlDocument();
-                doc.Load(path1);
-
-                foreach (CustomerCredential customer in customerdetial)
-                {
-                    XmlNode xnode = doc.CreateNode(XmlNodeType.Element, "CustomerCredential", null);
-                    XmlSerializer xSeriz = new XmlSerializer(typeof(CustomerCredential));
-                    XmlSerializerNamespaces ns = new XmlSerializerNamespaces();
-                    ns.Add("", "");
-                    XmlWriterSettings writtersetting = new XmlWriterSettings();
-                    writtersetting.OmitXmlDeclaration = true;
-                    StringWriter stringwriter = new StringWriter();
-                    using (XmlWriter xmlwriter = System.Xml.XmlWriter.Create(stringwriter, writtersetting))
-                    {
-                        xSeriz.Serialize(xmlwriter, customer, ns);
-                    }
-                    xnode.InnerXml = stringwriter.ToString();
-                    XmlNode bindxnode = xnode.SelectSingleNode("CustomerCredential");
-                    doc.DocumentElement.AppendChild(bindxnode);
-
-                }
-                doc.Save(path1);
-            }
-
-            Console.WriteLine("All customer credential  has been stored in the XML file at {0}", path1);
-        }*/
+        
     }
 }

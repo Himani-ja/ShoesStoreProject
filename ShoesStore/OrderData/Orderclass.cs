@@ -1,6 +1,6 @@
 ﻿using System;
 using StoreData;
-using ShoesData;
+using ProductData;
 using ShoesLibrary;
 using System.Data;
 using System.Xml.Linq;
@@ -11,7 +11,7 @@ namespace OrderData
 {
     public class Orderclass
     { 
-        public void StoreSelection(int u_id)
+        /*public void StoreSelection(int u_id)
         {
             int shoeselection;
             int buyquantity;
@@ -39,8 +39,8 @@ namespace OrderData
                 }
             }
             
-            FileRepo display = new FileRepo();
-            var allshoes = display.GetAllShoes();
+            ProductRepo display = new ProductRepo();
+            //var allshoes = display.GetAllShoes();
             buymore:
                 foreach (var shoes in allshoes)
                 {
@@ -156,7 +156,7 @@ namespace OrderData
 
         }
 
-        public static void QuantityUpdate(string id, int buyquantity)
+        public static bool QuantityUpdate(string id, int buyquantity)
         {
             XDocument xdoc = XDocument.Load(@"..\..\..\..\ShoesData\shoes.xml");
 
@@ -172,6 +172,6 @@ namespace OrderData
             }
             else
                 return false;
-        }
+        }*/
     }
 }

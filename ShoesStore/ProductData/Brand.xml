@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfBrand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Brand>
+		<Brand_Id>1</Brand_Id>
+		<Brand_Name>Nike</Brand_Name>
+	</Brand>
+	<Brand>
+		<Brand_Id>2</Brand_Id>
+		<Brand_Name>Bata</Brand_Name>
+	</Brand>
+	<Brand>
+		<Brand_Id>3</Brand_Id>
+		<Brand_Name>Puma</Brand_Name>
+	</Brand>
+	<Brand>
+		<Brand_Id>4</Brand_Id>
+		<Brand_Name>Rebook</Brand_Name>
+	</Brand>
+</ArrayOfBrand>

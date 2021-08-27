@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using CustData;
-using LoginCredential;
+using Users;
 
 namespace InputValidation
 {
@@ -20,7 +20,7 @@ namespace InputValidation
             return name;
         }
 
-        public CustomerCredential CheckName(CustomerCredential username1)
+        public User CheckName(User username1)
         {
             throw new NotImplementedException();
         }
@@ -73,7 +73,7 @@ namespace InputValidation
         {
             CustomerLoginRepo loginobj = new CustomerLoginRepo();
                        
-            if (loginobj.GetCustomerlogin(u_name) == null)
+            if (loginobj.GetUserlogin(u_name) == null)
             {
                 Console.WriteLine($"Sorry... there is no customer present with {u_name} name");
                 Console.ReadLine();
@@ -84,7 +84,7 @@ namespace InputValidation
         {
             CustomerLoginRepo loginobj = new CustomerLoginRepo();
 
-            if (loginobj.GetCustomerlogin(username) == null)
+            if (loginobj.GetUserlogin(username) == null)
             {
                 Console.WriteLine(" Invalid username");
                 

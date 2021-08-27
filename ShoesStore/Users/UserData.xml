@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <User_ID>1807</User_ID>
+    <Role>Customer</Role>
+    <UserName>himani</UserName>
+    <Password>himani123</Password>
+  </User>
+</ArrayOfUser>
