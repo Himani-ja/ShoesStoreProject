@@ -98,8 +98,6 @@
     <TotalBill>1000</TotalBill>
     <OrderDate>8/20/2021 11:33:11 AM</OrderDate>
   </orders>
-</ArrayOfOrders>
-
   <orders>
     <StoreId>87757</StoreId>
     <Customer_Id>98062</Customer_Id>
@@ -142,6 +140,95 @@
     <TotalBill>2100</TotalBill>
     <OrderDate>8/20/2021 12:50:27 PM</OrderDate>
   </orders>
-
-  </ArrayOfOrders>
-
+  <orders>
+    <StoreId>26727</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>76518</OrderId>
+    <TotalBill>14000</TotalBill>
+    <OrderDate>8/21/2021 7:46:24 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>26727</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>85754</OrderId>
+    <TotalBill>9000</TotalBill>
+    <OrderDate>8/21/2021 7:49:50 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>26727</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>69443</OrderId>
+    <TotalBill>8000</TotalBill>
+    <OrderDate>8/21/2021 8:15:38 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>26727</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>47542</OrderId>
+    <TotalBill>11000</TotalBill>
+    <OrderDate>8/21/2021 8:17:14 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>53970</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>42795</OrderId>
+    <TotalBill>6500</TotalBill>
+    <OrderDate>8/21/2021 8:21:37 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>53970</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>50828</OrderId>
+    <TotalBill>7550</TotalBill>
+    <OrderDate>8/21/2021 8:23:10 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>53970</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>24291</OrderId>
+    <TotalBill>6500</TotalBill>
+    <OrderDate>8/21/2021 8:31:06 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>53970</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>29575</OrderId>
+    <TotalBill>6980</TotalBill>
+    <OrderDate>8/21/2021 8:32:33 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>26727</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>86576</OrderId>
+    <TotalBill>11000</TotalBill>
+    <OrderDate>8/21/2021 8:35:00 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>26727</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>54133</OrderId>
+    <TotalBill>7000</TotalBill>
+    <OrderDate>8/21/2021 9:14:07 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>59397</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>59415</OrderId>
+    <TotalBill>0</TotalBill>
+    <OrderDate>8/21/2021 9:18:43 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>59397</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>24902</OrderId>
+    <TotalBill>7400</TotalBill>
+    <OrderDate>8/21/2021 9:23:41 PM</OrderDate>
+  </orders>
+  <orders>
+    <StoreId>26727</StoreId>
+    <Customer_Id>91505</Customer_Id>
+    <OrderId>97594</OrderId>
+    <TotalBill>7000</TotalBill>
+    <OrderDate>8/27/2021 11:29:05 AM</OrderDate>
+  </orders>
+</ArrayOfOrders>

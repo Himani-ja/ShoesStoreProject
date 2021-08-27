@@ -10,7 +10,7 @@
     <Type>Male</Type>
     <Lace>Yes</Lace>
     <Brand>Puma</Brand>
-    <Quantity>100</Quantity>
+    <Quantity>85</Quantity>
   </shoes>
   <shoes>
     <StoreId>26727</StoreId>
@@ -22,7 +22,7 @@
     <Type>Female</Type>
     <Lace>Yes</Lace>
     <Brand>Nike</Brand>
-    <Quantity>72</Quantity>
+    <Quantity>48</Quantity>
   </shoes>
   <shoes>
     <StoreId>39868</StoreId>
@@ -46,7 +46,7 @@
     <Type>Female</Type>
     <Lace>Yes</Lace>
     <Brand>Bata</Brand>
-    <Quantity>100</Quantity>
+    <Quantity>98</Quantity>
   </shoes>
   <shoes>
     <StoreId>59397</StoreId>
@@ -58,7 +58,7 @@
     <Type>Male</Type>
     <Lace>No</Lace>
     <Brand>Skechers</Brand>
-    <Quantity>100</Quantity>
+    <Quantity>97</Quantity>
   </shoes>
   <shoes>
     <StoreId>53970</StoreId>
@@ -70,7 +70,7 @@
     <Type>Male</Type>
     <Lace>No</Lace>
     <Brand>Clarks</Brand>
-    <Quantity>100</Quantity>
+    <Quantity>78</Quantity>
   </shoes>
   <shoes>
     <StoreId>53970</StoreId>
@@ -82,7 +82,7 @@
     <Type>Female</Type>
     <Lace>Yes</Lace>
     <Brand>Adidas</Brand>
-    <Quantity>100</Quantity>
+    <Quantity>93</Quantity>
   </shoes>
   <shoes>
     <StoreId>26727</StoreId>
@@ -94,6 +94,6 @@
     <Type>Female</Type>
     <Lace>No</Lace>
     <Brand>Gucci</Brand>
-    <Quantity>90</Quantity>
+    <Quantity>67</Quantity>
   </shoes>
 </ArrayOfShoes>
