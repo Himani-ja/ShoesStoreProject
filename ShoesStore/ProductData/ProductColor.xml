@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfProductColor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<ProductColor>
+		<Product_Id>1</Product_Id>
+		<Color_Id>1</Color_Id>
+	</ProductColor>
+	<ProductColor>
+		<Product_Id>1</Product_Id>
+		<Color_Id>2</Color_Id>
+	</ProductColor>
+	<ProductColor>
+		<Product_Id>1</Product_Id>
+		<Color_Id>3</Color_Id>
+	</ProductColor>
+	
+</ArrayOfProductColor>

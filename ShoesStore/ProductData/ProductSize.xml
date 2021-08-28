@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfProductSize xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<ProductSize>
+		<Product_Id>1</Product_Id>
+		<Size_Id>1</Size_Id>
+	</ProductSize>
+	<ProductSize>
+		<Product_Id>1</Product_Id>
+		<Size_Id>2</Size_Id>
+	</ProductSize>
+	<ProductSize>
+		<Product_Id>1</Product_Id>
+		<Size_Id>3</Size_Id>
+	</ProductSize>
+
+</ArrayOfProductSize>

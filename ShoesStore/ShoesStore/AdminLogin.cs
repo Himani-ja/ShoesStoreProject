@@ -105,6 +105,61 @@ namespace ShoesStore
 
             }
 
+            var allcolor = prorepo.GetAllColor();
+            foreach (var color in allcolor)
+            {
+
+                Console.Write("\n | Id:" + color.Color_Id + " |");
+                Console.Write(" Name:" + color.Color_Name + "|\n");
+
+            }
+            var allsize = prorepo.GetAllSize();
+            foreach (var size in allsize)
+            {
+
+                Console.Write("\n | Id:" + size.Size_Id + " |");
+                Console.Write(" Name:" + size.Size_Name + "|\n");
+
+            }
+            var allproductcolor = prorepo.GetAllProductColor();
+            foreach (var productcolor in allproductcolor)
+            {
+
+                Console.Write("\n | Product Id:" + productcolor.Product_Id + " |");
+                Console.Write(" Color Id:" + productcolor.Color_Id + "|\n");
+
+            }
+            var allproductsize = prorepo.GetAllProductSize();
+            foreach (var productsize in allproductsize)
+            {
+
+                Console.Write("\n | Product Id:" + productsize.Product_Id + " |");
+                Console.Write(" Size Id:" + productsize.Size_Id + "|\n");
+
+            }
+            var allproduct = prorepo.GetAllProduct();
+            foreach (var product in allproduct)
+            {
+
+                Console.Write("\n | Product Id:" + product.Product_Id + " |");
+                Console.Write(" Category Id:" + product.Category_Id + " |");
+                Console.Write(" Store Id:" + product.Store_Id + " |");
+                Console.Write(" Product Name:" + product.Product_Name + "|\n");
+
+            }
+
+            var allproductdetails = prorepo.GetAllProductDetails();
+            foreach (var productdetails in allproductdetails)
+            {
+                Console.Write("\n | ProductDetails Id:" + productdetails.ProductDetails_Id + " |");
+                Console.Write(" Product Id:" + productdetails.Product_Id + " |");
+                Console.Write(" Brand Id:" + productdetails.Brand_Id + " |");
+                Console.Write(" Product type:" + productdetails.Product_Type + " |");
+                Console.Write(" Price:" + productdetails.Price + "|");
+                Console.Write(" Lace:" + productdetails.Lace + " |");
+                Console.Write(" Quantity:" + productdetails.Quantity + " |\n");
+
+            }
 
             /*FileRepoStore display = new FileRepoStore();
             var allstores = display.GetAllStores();
