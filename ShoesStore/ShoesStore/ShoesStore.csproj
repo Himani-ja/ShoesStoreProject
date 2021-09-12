@@ -9,7 +9,7 @@
     <ProjectReference Include="..\CustData\CustData.csproj" />
     <ProjectReference Include="..\InputValidation\InputValidation.csproj" />
     <ProjectReference Include="..\OrderData\OrderData.csproj" />
-    <ProjectReference Include="..\LoginCredential\Users.csproj" />
+
     <ProjectReference Include="..\ProductData\ProductData.csproj" />
     <ProjectReference Include="..\ShoesLibrary\ShoesLibrary.csproj" />
     <ProjectReference Include="..\StoreData\StoreData.csproj" />

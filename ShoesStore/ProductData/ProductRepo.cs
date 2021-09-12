@@ -70,17 +70,17 @@ namespace ProductData
 
             System.Console.WriteLine("Shoes has been stored in the XML file");
             Console.ReadLine();
-        }
+        }*/
 
-        public IEnumerable<Product> GetAllShoes(string _path = @"..\..\..\..\ShoesData\shoes.xml")
+        public IEnumerable<Product> GetAllProduct(string _path = @"..\..\..\..\ProductData\product.xml")
         {
             XmlSerializer deserializer = null;
-            List<Product> allshoes = null;
+            List<Product> allproduct = null;
             try
             {
                 using StreamReader reader = new StreamReader(_path);
                 deserializer = new XmlSerializer(typeof(List<Product>));
-                allshoes = (List<Product>)deserializer.Deserialize(reader);
+                allproduct = (List<Product>)deserializer.Deserialize(reader);
             }
             catch (DirectoryNotFoundException ex)
             {
@@ -94,21 +94,53 @@ namespace ProductData
             {
                 Console.WriteLine("Exception");
             }
-            if (allshoes != null)
+            if (allproduct != null)
             {
-                if (allshoes.Count > 0)
-                    return allshoes;
+                if (allproduct.Count > 0)
+                    return allproduct;
             }
             else
                 throw new System.NullReferenceException();
             return null;
         }
-        public Product GetShoes(int id)
+        public Product Getproduct(int id)
         {
-            var shoes = GetAllShoes();
-            var shoe = shoes.Where<Product>(x => x.Id == id).FirstOrDefault();
+            var product = GetAllProduct();
+            var shoe = product.Where<Product>(x => x.Product_Id == id).FirstOrDefault();
             return shoe;
-        }*/
+        }
+
+        public IEnumerable<ProductDetails> GetAllProductDetails(string _path = @"..\..\..\..\ProductData\productdetails.xml")
+        {
+            XmlSerializer deserializer = null;
+            List<ProductDetails> allproductdetails = null;
+            try
+            {
+                using StreamReader reader = new StreamReader(_path);
+                deserializer = new XmlSerializer(typeof(List<ProductDetails>));
+                allproductdetails = (List<ProductDetails>)deserializer.Deserialize(reader);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (FileNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception");
+            }
+            if (allproductdetails != null)
+            {
+                if (allproductdetails.Count > 0)
+                    return allproductdetails;
+            }
+            else
+                throw new System.NullReferenceException();
+            return null;
+        }
 
         public IEnumerable<Category> GetAllCategory(string _path = @"..\..\..\..\ProductData\Category.xml")
         {
@@ -168,6 +200,130 @@ namespace ProductData
             {
                 if (allbrand.Count > 0)
                     return allbrand;
+            }
+            else
+                throw new System.NullReferenceException();
+            return null;
+        }
+        public IEnumerable<Color> GetAllColor(string _path = @"..\..\..\..\ProductData\Color.xml")
+        {
+            XmlSerializer deserializer = null;
+            List<Color> allcolor = null;
+            try
+            {
+                using StreamReader reader = new StreamReader(_path);
+                deserializer = new XmlSerializer(typeof(List<Color>));
+                allcolor = (List<Color>)deserializer.Deserialize(reader);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (FileNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception");
+            }
+            if (allcolor != null)
+            {
+                if (allcolor.Count > 0)
+                    return allcolor;
+            }
+            else
+                throw new System.NullReferenceException();
+            return null;
+        }
+        public IEnumerable<Size> GetAllSize(string _path = @"..\..\..\..\ProductData\Size.xml")
+        {
+            XmlSerializer deserializer = null;
+            List<Size> allsize = null;
+            try
+            {
+                using StreamReader reader = new StreamReader(_path);
+                deserializer = new XmlSerializer(typeof(List<Size>));
+                allsize = (List<Size>)deserializer.Deserialize(reader);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (FileNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception");
+            }
+            if (allsize != null)
+            {
+                if (allsize.Count > 0)
+                    return allsize;
+            }
+            else
+                throw new System.NullReferenceException();
+            return null;
+        }
+        public IEnumerable<ProductColor> GetAllProductColor(string _path = @"..\..\..\..\ProductData\ProductColor.xml")
+        {
+            XmlSerializer deserializer = null;
+            List<ProductColor> allproductcolor = null;
+            try
+            {
+                using StreamReader reader = new StreamReader(_path);
+                deserializer = new XmlSerializer(typeof(List<ProductColor>));
+                allproductcolor = (List<ProductColor>)deserializer.Deserialize(reader);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (FileNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception");
+            }
+            if (allproductcolor != null)
+            {
+                if (allproductcolor.Count > 0)
+                    return allproductcolor;
+            }
+            else
+                throw new System.NullReferenceException();
+            return null;
+        }
+        public IEnumerable<ProductSize> GetAllProductSize(string _path = @"..\..\..\..\ProductData\ProductSize.xml")
+        {
+            XmlSerializer deserializer = null;
+            List<ProductSize> allproductSize = null;
+            try
+            {
+                using StreamReader reader = new StreamReader(_path);
+                deserializer = new XmlSerializer(typeof(List<ProductSize>));
+                allproductSize = (List<ProductSize>)deserializer.Deserialize(reader);
+            }
+            catch (DirectoryNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (FileNotFoundException ex)
+            {
+                System.Console.WriteLine("Invalid path to the file");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception");
+            }
+            if (allproductSize != null)
+            {
+                if (allproductSize.Count > 0)
+                    return allproductSize;
             }
             else
                 throw new System.NullReferenceException();

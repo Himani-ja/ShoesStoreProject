@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfColor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Color>
+		<Color_Id>1</Color_Id>
+		<Color_Name>Blue</Color_Name>
+	</Color>
+	<Color>	
+		<Color_Id>2</Color_Id>
+		<Color_Name>Black</Color_Name>
+	</Color>
+	<Color>
+		<Color_Id>3</Color_Id>
+		<Color_Name>Green</Color_Name>
+	</Color>
+	<Color>
+		<Color_Id>4</Color_Id>
+		<Color_Name>Red</Color_Name>
+	</Color>
+	<Color>
+		<Color_Id>5</Color_Id>
+		<Color_Name>White</Color_Name>
+	</Color>
+	<Color>
+		<Color_Id>6</Color_Id>
+		<Color_Name>Grey</Color_Name>
+	</Color>
+
+</ArrayOfColor>

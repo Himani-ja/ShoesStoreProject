@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ArrayOfProductDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<ProductDetails>
+		<ProductDetails_Id>1</ProductDetails_Id>
+		<Product_Id>1</Product_Id>
+		<Brand_Id>1</Brand_Id>
+		<Product_Type>0</Product_Type>
+		<Price>300</Price>
+		<Lace>1</Lace>
+		<Quantity>86</Quantity>
+		<Image>img1.jpg</Image>
+	</ProductDetails>
+</ArrayOfProductDetails>
